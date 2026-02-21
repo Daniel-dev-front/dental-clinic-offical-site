@@ -1,5 +1,5 @@
 import React from "react";
-import Us from "./us/US";
+import Us from "./us/Us";
 import Principles from "./principles/Principles";
 import OurDoctors from "./ourDoctors/OurDoctors";
 import Interior from "./Interior/Interior";
