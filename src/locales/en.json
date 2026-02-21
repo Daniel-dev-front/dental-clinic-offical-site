@@ -453,5 +453,17 @@
   "submit": "Place Order",
   "success": "Order placed successfully! We will contact you.",
   "error": "Error placing order"
+},
+"cart": {
+  "title": "Cart",
+  "clearAll": "Clear all",
+  "empty": "Cart is empty",
+  "emptyDesc": "Add items to cart to place an order",
+  "goToStore": "Go to store",
+  "total": "Total",
+  "checkout": "Checkout",
+  "remove": "Remove",
+  "quantity": "Quantity",
+  "clearConfirm": "Clear entire cart?"
 }
 }

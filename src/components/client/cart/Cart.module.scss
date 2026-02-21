@@ -220,52 +220,7 @@
   }
 }
 
-/* Маленький планшет (до 768px) */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .clearBtn {
-    width: 100%;
-    justify-content: center;
-  }
-  .cartItem {
-    grid-template-columns: 60px 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 12px;
-
-    .image {
-      grid-row: span 2;
-    }
-    .info {
-      grid-column: 2;
-    }
-    .quantity {
-      grid-column: 2;
-      grid-row: 2;
-      justify-self: start;
-    }
-    .itemTotal {
-      grid-column: 3;
-      grid-row: 1;
-    }
-    .removeBtn {
-      grid-column: 3;
-      grid-row: 2;
-    }
-  }
-
-  .summary {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-
-    .total {
-      justify-content: center;
-    }
-  }
-}
+/* ===== Адаптивность ===== */
 
 /* Ноутбук и меньше (до 1200px) */
 @media (max-width: 1200px) {
@@ -318,6 +273,53 @@
   }
   .summary {
     padding: 20px;
+  }
+}
+
+/* Маленький планшет (до 768px) - ваш существующий */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .clearBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cartItem {
+    grid-template-columns: 60px 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 12px;
+
+    .image {
+      grid-row: span 2;
+    }
+    .info {
+      grid-column: 2;
+    }
+    .quantity {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+    }
+    .itemTotal {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .removeBtn {
+      grid-column: 3;
+      grid-row: 2;
+    }
+  }
+
+  .summary {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+
+    .total {
+      justify-content: center;
+    }
   }
 }
 
@@ -391,5 +393,75 @@
     padding: 10px 20px;
     font-size: 0.9rem;
     width: 100%;
+  }
+}
+
+/* Очень маленькие телефоны (до 360px) */
+@media (max-width: 360px) {
+  .cart h2 {
+    font-size: 1.2rem;
+  }
+  
+  .cartItem {
+    padding: 10px;
+    gap: 8px;
+  }
+  
+  .cartItem .image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cartItem .info h3 {
+    font-size: 0.9rem;
+  }
+  
+  .cartItem .quantity {
+    gap: 6px;
+    
+    button {
+      width: 24px;
+      height: 24px;
+      font-size: 0.8rem;
+    }
+    
+    span {
+      min-width: 24px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .cartItem .itemTotal p {
+    font-size: 0.8rem;
+  }
+  
+  .summary .total {
+    font-size: 1rem;
+    
+    .totalPrice {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .summary .checkoutBtn {
+    padding: 10px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .empty {
+    padding: 30px 12px;
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+    
+    .link {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
   }
 }

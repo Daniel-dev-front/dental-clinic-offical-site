@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useProduct } from "../../../context/MainContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiTrash2, FiPlus, FiMinus, FiShoppingBag } from "react-icons/fi";
 import { Snackbar, Alert, Button } from "@mui/material";
 import scss from "./Cart.module.scss";
 
 const Cart = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { cart, readCart, deleteCart, updateQuantity, totalPrice, clearAll } =
     useProduct();
   const [snackbar, setSnackbar] = React.useState({
@@ -45,11 +46,7 @@ const Cart = () => {
   };
 
   const handleCheckout = () => {
-    setSnackbar({
-      open: true,
-      message: t("client.cart.checkout"),
-      severity: "success",
-    });
+    navigate("/profile/checkout");
   };
 
   const handleCloseSnackbar = () => setSnackbar({ ...snackbar, open: false });

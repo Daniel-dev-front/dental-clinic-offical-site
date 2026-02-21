@@ -64,7 +64,7 @@ const MainRoutes = () => {
         { path: "cart", element: <Cart /> },
         { path: "appointments", element: <Appointments /> },
         { path: "settings", element: <ProfileSettings /> },
-        {path:"checkout", element:<Checkout /> }
+        { path: "checkout", element:<Checkout /> }
       ],
     },
   ];
