@@ -14,7 +14,7 @@ import AddServices from "../components/admin/addServices/AddServices";
 import ProductDetail from "../components/admin/productDetail/ProductDetail";
 import ClientLayout from "../components/client/clientLayout/ClientLayout";
 import ClientDashboard from "../components/client/ClientDashboard/ClientDashboard";
-import Wishlist from "../components/client/wishlist/Wishlist";
+import Wishlist from "../components/client/Wishlist/Wishlist.jsx"
 import Cart from "../components/client/cart/Cart";
 import Appointments from "../components/client/appointments/Appointments";
 import ProfileSettings from "../components/client/profileSettings/ProfileSettings";
