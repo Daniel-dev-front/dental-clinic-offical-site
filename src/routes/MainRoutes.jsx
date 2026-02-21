@@ -5,7 +5,7 @@ import Store from "../pages/store/Store";
 import Login from "../pages/auth/login/Login";
 import SignUp from "../pages/auth/signUp/SignUp";
 import Admin from "../components/admin/panel/Admin";
-import AddMaterial from "../components/admin/addMaterial/addMaterial";
+import AddMaterial from "../components/admin/addMaterial/AddMaterial";
 import AllServices from "../components/admin/allServices/AllServices";
 import DashBoard from "../components/admin/dashboard/DashBoard";
 import EditMaterial from "../components/admin/editMaterial/EditMaterial";
@@ -24,6 +24,7 @@ import AddDoctor from "../components/admin/addDoctor/AddDoctor";
 import EditDoctor from "../components/admin/editDoctor/EditDoctor";
 import EditService from "../components/admin/editService/EditService";
 import Services from "../pages/services/Services";
+import Checkout from "../components/client/checkout/Checkout";
 
 const MainRoutes = () => {
   const routes = [
@@ -63,6 +64,7 @@ const MainRoutes = () => {
         { path: "cart", element: <Cart /> },
         { path: "appointments", element: <Appointments /> },
         { path: "settings", element: <ProfileSettings /> },
+        {path:"checkout", element:<Checkout /> }
       ],
     },
   ];

@@ -1,16 +1,16 @@
-import LanguageSwitcher from "../../components/LanguageSwitcher/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import scss from "./Header.module.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import LanguageSwitcher from "../../components/LanguageSwitcher/LanguageSwitcher";
 import { PiUserListFill } from "react-icons/pi";
 import { TbUserSquareRounded } from "react-icons/tb";
 import { FiLogIn } from "react-icons/fi"; // <-- импортируем иконку входа
 import SignUp from "../../pages/auth/signUp/SignUp";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext";
-import { useAuth } from "../../context/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../../context/AuthProvider";
 
 const Header = () => {
   const { t } = useTranslation();

@@ -6,7 +6,25 @@ const CHAT_ID = "5946461741"; // можно массив, если хотите 
 export const sendToTelegram = async (data) => {
   let message = "";
 
-  if (data.statusUpdate) {
+  if (data.type === "order") {
+    // Новый заказ из магазина
+    message = `
+🛍️ *НОВЫЙ ЗАКАЗ*
+👤 *Клиент:* ${data.displayName}
+📞 *Телефон:* ${data.phone}
+📍 *Адрес:* ${data.address || "Не указан"}
+
+📦 *Товары:*
+${data.items.map(item => `• ${item.name} - ${item.quantity} шт. - ${item.price} сом`).join('\n')}
+
+💰 *Общая сумма:* ${data.total} сом
+💳 *Способ оплаты:* ${data.paymentMethod || "Не указан"}
+🚚 *Доставка:* ${data.deliveryMethod || "Самовывоз"}
+
+📝 *Комментарий:* ${data.comment || "Нет"}
+    `;
+  } else if (data.statusUpdate) {
+    // Обновление статуса записи
     message = `
 🔄 *Статус записи изменён*
 👤 *Клиент:* ${data.displayName}
@@ -16,6 +34,7 @@ export const sendToTelegram = async (data) => {
 📌 *Новый статус:* ${data.status === "confirmed" ? "✅ Подтверждено" : "❌ Отменено"}
     `;
   } else {
+    // Новая запись к врачу
     message = `
 📅 *Новая запись к врачу*
 👤 *Клиент:* ${data.displayName}

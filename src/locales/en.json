@@ -437,5 +437,21 @@
       "surgery": "Surgery",
       "hygiene": "Hygiene"
     }
-  }
+  },"checkout": {
+  "title": "Checkout",
+  "orderSummary": "Your Order",
+  "name": "Name",
+  "phone": "Phone",
+  "address": "Delivery Address",
+  "paymentMethod": "Payment Method",
+  "deliveryMethod": "Delivery Method",
+  "comment": "Order Comment",
+  "cash": "Cash",
+  "card": "Card",
+  "pickup": "Pickup",
+  "delivery": "Delivery",
+  "submit": "Place Order",
+  "success": "Order placed successfully! We will contact you.",
+  "error": "Error placing order"
+}
 }
