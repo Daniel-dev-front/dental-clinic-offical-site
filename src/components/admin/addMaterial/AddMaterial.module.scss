@@ -1,0 +1,270 @@
+.section {
+  padding: 20px;
+  font-family: inter;
+}
+
+.addMaterial {
+  background: var(--card-bg, #ffffff);
+  border-radius: 28px;
+  padding: 32px 36px;
+
+  box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #e9eef2);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  .tittle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      font-family: inter;
+      background: linear-gradient(
+        135deg,
+        var(--primary, #2563eb),
+        var(--accent, #7c3aed)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .backBtn {
+      background: transparent;
+      border: 1px solid var(--border-color, #e2e8f0);
+      color: var(--admin-text, #1e293b);
+      border-radius: 30px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: var(--border-color, #e2e8f0);
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 39px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-weight: 600;
+    color: var(--admin-text, #1e293b);
+    font-size: 1rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 14px 18px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 18px;
+    background: var(--input-bg, #ffffff);
+    color: var(--admin-text, #1e293b);
+    font-size: 16px;
+    transition:
+      border 0.2s,
+      box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary, #2563eb);
+      box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--primary, #2563eb) 20%, transparent);
+    }
+
+    &::placeholder {
+      color: var(--text-secondary, #94a3b8);
+    }
+  }
+  select {
+    cursor: pointer;
+  }
+  textarea {
+    resize: vertical;
+  }
+}
+
+.preview {
+  margin-top: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 200px;
+  border: 1px solid var(--border-color, #ddd);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.submitBtn {
+  background: var(--primary, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s,
+    box-shadow 0.2s;
+  margin-top: 12px;
+  box-shadow: 0 8px 18px
+    color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+
+  &:hover {
+    background: var(--primary-hover, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px
+      color-mix(in srgb, var(--primary, #2563eb) 40%, transparent);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px
+      color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+  }
+}
+
+.successMessage {
+  background: #10b98120;
+  color: #10b981;
+  border: 1px solid #10b98140;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  margin-top: 8px;
+}
+
+// Тёмная тема (переменные уже в themes.scss, здесь просто уточнения)
+.dark-theme .addMaterial {
+  --input-bg: #2a2f3a;
+  --border-color: #3a4050;
+}
+input::-webkit-inner-spin-button {
+  display: none;
+}
+// ... (твой существующий код) ...
+
+/* ===== Адаптивность ===== */
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .addMaterial {
+    padding: 28px 30px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .section {
+    padding: 16px;
+  }
+  .addMaterial {
+    padding: 24px;
+  }
+  .addMaterial .tittle h2 {
+    font-size: 1.8rem;
+  }
+  .form {
+    gap: 30px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .addMaterial {
+    padding: 20px;
+  }
+  .addMaterial .tittle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .addMaterial .tittle h2 {
+    font-size: 1.6rem;
+  }
+  .addMaterial .tittle .backBtn {
+    align-self: flex-end;
+  }
+  .form {
+    gap: 24px;
+  }
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  .preview {
+    max-width: 150px;
+  }
+  .submitBtn {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .section {
+    padding: 12px;
+  }
+  .addMaterial {
+    padding: 16px;
+    border-radius: 24px;
+  }
+  .addMaterial .tittle h2 {
+    font-size: 1.4rem;
+  }
+  .addMaterial .tittle .backBtn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+  .form {
+    gap: 20px;
+  }
+  .formGroup label {
+    font-size: 0.9rem;
+  }
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 16px;
+  }
+  .preview {
+    max-width: 120px;
+    border-radius: 12px;
+  }
+  .submitBtn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+  }
+  .successMessage {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}

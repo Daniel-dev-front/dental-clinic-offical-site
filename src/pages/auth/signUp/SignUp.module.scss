@@ -1,0 +1,370 @@
+#register {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.content {
+  background: linear-gradient(90deg, #2b7de8 0%, #b565e7 100%);
+  border-radius: 14px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 390px; /* Ограничиваем ширину окна */
+  position: fixed;
+  left: 600px;
+  top: 190px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+  .close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-right: -8px;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: #fff;
+        transform: scale(1.1); // Легкое увеличение при наведении
+      }
+    }
+  }
+  .sign_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 89%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 30px;
+    bottom: 0;
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h2 {
+        color: #ffffff;
+        font-family: inter;
+        font-weight: 600;
+      }
+      h5 {
+        font-family: inter;
+        color: #e4eef8;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+      margin-top: 20px;
+      height: 310px;
+      align-items: center;
+      justify-content: center;
+      .input {
+        border-radius: 20px;
+        border: none;
+        width: 300px;
+        font-weight: 500;
+        height: 40px;
+        font-size: 14px;
+        padding-left: 10px;
+        padding-bottom: 2px;
+        color: #00000099;
+        font-family: inter;
+        background: rgba(255, 255, 255, 0.15); /* Прозрачность фона */
+        backdrop-filter: blur(15px); /* Размытие фона за блоком */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      }
+
+      input::placeholder {
+        color: #00000070;
+        font-size: 12px;
+        letter-spacing: 0.2px;
+        border: none;
+      }
+    }
+  }
+  .sign_inGoogle {
+    display: flex;
+    flex-direction: column;
+    width: 355px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 22px;
+
+    .google {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 340px;
+      height: 40px;
+      gap: 8px;
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: 1px solid #e2e8f0;
+        height: 35px;
+        border-radius: 10px;
+        gap: 5px;
+        font-size: 12px;
+        font-family: roboto;
+        cursor: pointer;
+        font-weight: 500;
+        background-color: #fff;
+        color: #ffffffd5;
+        &:hover {
+          transform: scale(1.1); // Легкое увеличение при наведении
+          transition: all 0.3s;
+        }
+        background: rgba(255, 255, 255, 0.15); /* Прозрачность фона */
+        backdrop-filter: blur(15px); /* Размытие фона за блоком */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      }
+    }
+  }
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    p {
+      color: #ffffffc8;
+      font-family: inter;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    button {
+      display: flex;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #d2cdcd;
+      font-family: inter;
+      &:hover {
+        color: #4323fa;
+        font-weight: 500;
+        text-decoration: underline;
+      }
+    }
+    .nav {
+      text-decoration-line: none;
+    }
+  }
+}
+.content {
+  background: var(--header-gradient); // или отдельная переменная
+}
+
+.input {
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+}
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .content {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .content {
+    max-width: 380px;
+    height: 400px;
+  }
+  .content .sign_text form {
+    gap: 15px;
+    height: 300px;
+  }
+  .content .sign_text form .input {
+    width: 280px;
+  }
+  .content .sign_inGoogle {
+    width: 320px;
+  }
+  .content .sign_inGoogle .google {
+    width: 300px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .content {
+    max-width: 360px;
+    height: 390px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .content .sign_text {
+    left: 15px;
+    right: 25px;
+  }
+  .content .sign_text form {
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .content .sign_text form .input {
+    width: 260px;
+    height: 38px;
+    font-size: 13px;
+  }
+  .content .sign_inGoogle {
+    width: 300px;
+  }
+  .content .sign_inGoogle .google {
+    width: 280px;
+    gap: 6px;
+  }
+  .content .sign_inGoogle .google button {
+    font-size: 11px;
+    height: 32px;
+  }
+  .content .login p {
+    font-size: 12px;
+  }
+  .content .login button {
+    font-size: 12px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  #register {
+    padding: 10px;
+  }
+  .content {
+    max-width: 95%;
+    height: auto;
+    min-height: 380px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 15px;
+  }
+  .content .sign_text {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding: 15px 15px 10px;
+  }
+  .content .sign_text span {
+    padding-right: 10px;
+    padding-top: 5px;
+  }
+  .content .sign_text span h2 {
+    font-size: 1.3rem;
+  }
+  .content .sign_text span h5 {
+    font-size: 0.9rem;
+  }
+  .content .sign_text form {
+    width: 100%;
+    height: auto;
+    gap: 12px;
+    margin-top: 5px;
+  }
+  .content .sign_text form .input {
+    width: 100%;
+    max-width: 100%;
+    height: 36px;
+    font-size: 12px;
+    padding-left: 8px;
+  }
+  .content .sign_text form input::placeholder {
+    font-size: 11px;
+  }
+  .content .sign_inGoogle {
+    width: 100%;
+    gap: 15px;
+  }
+  .content .sign_inGoogle .google {
+    width: 100%;
+    max-width: 280px;
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+  }
+  .content .sign_inGoogle .google button {
+    width: 100%;
+    font-size: 11px;
+    height: 34px;
+    padding: 0 10px;
+  }
+  .content .login {
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .content .login p {
+    font-size: 11px;
+  }
+  .content .login button {
+    font-size: 11px;
+  }
+  .close {
+    width: 28px;
+    height: 28px;
+    margin-right: -5px;
+  }
+  .close svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Очень маленькие телефоны (до 360px) */
+@media (max-width: 360px) {
+  .content {
+    min-height: 360px;
+  }
+  .content .sign_text form .input {
+    max-width: 220px;
+  }
+  .content .sign_inGoogle .google {
+    max-width: 240px;
+  }
+  .content .login {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

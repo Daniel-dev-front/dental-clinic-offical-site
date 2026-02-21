@@ -1,0 +1,191 @@
+.editMaterial {
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--card-bg, #fff);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+
+  h2 {
+    margin-bottom: 24px;
+    color: var(--admin-text, #333);
+    font-size: 1.8rem;
+    font-family: inter;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    height: 550px;
+  }
+  p {
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 500;
+
+    color: gray;
+  }
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+  }
+  input,
+  select,
+  textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 12px;
+    background: var(--input-bg, #fff);
+    color: var(--admin-text, #333);
+    font-size: 1rem;
+    transition: border 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary, #2563eb);
+    }
+  }
+  select {
+    cursor: pointer;
+  }
+  textarea {
+    font-family: inter;
+    resize: vertical;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &.saveBtn {
+        background: var(--primary, #2563eb);
+        color: white;
+        flex: 1;
+
+        &:hover {
+          background: var(--primary-hover, #1d4ed8);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+      }
+
+      &.cancelBtn {
+        background: transparent;
+        border: 1px solid var(--border-color, #ddd);
+        color: var(--admin-text, #666);
+
+        &:hover {
+          background: var(--border-color, #f0f0f0);
+        }
+      }
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary, #666);
+}
+// ... (твой существующий код) ...
+
+/* ===== Адаптивность ===== */
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .editMaterial {
+    max-width: 550px;
+    padding: 20px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .editMaterial h2 {
+    font-size: 1.6rem;
+  }
+  .editMaterial form {
+    height: auto;
+    min-height: 500px;
+    gap: 30px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .editMaterial {
+    padding: 16px;
+  }
+  .editMaterial h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .editMaterial form {
+    gap: 24px;
+  }
+  .editMaterial .formGroup {
+    gap: 8px;
+  }
+  .editMaterial input,
+  .editMaterial select,
+  .editMaterial textarea {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+  .editMaterial .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .editMaterial .actions button {
+    width: 100%;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .editMaterial {
+    padding: 12px;
+    border-radius: 20px;
+  }
+  .editMaterial h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .editMaterial form {
+    gap: 20px;
+  }
+  .editMaterial p {
+    font-size: 13px;
+  }
+  .editMaterial input,
+  .editMaterial select,
+  .editMaterial textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+  .editMaterial .actions button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .editMaterial .actions button.saveBtn {
+    flex: none;
+  }
+  .loading {
+    padding: 30px 16px;
+    font-size: 0.95rem;
+  }
+}

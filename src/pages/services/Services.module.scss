@@ -1,0 +1,386 @@
+.content_all {
+  width: 100%;
+  padding: 80px 0px;
+
+  .content_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 34px;
+    gap: 16px;
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(
+        135deg,
+        var(--primary, #2563eb),
+        var(--accent, #7c3aed)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      svg {
+        margin-top: -8px;
+        vertical-align: middle;
+      }
+    }
+    .refreshBtn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 40px;
+      padding: 10px 24px;
+      color: var(--admin-text, #1e293b);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: var(--border-color, #e2e8f0);
+        transform: translateY(-2px);
+      }
+
+      svg {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .grid {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+    gap: 15px;
+  }
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+
+    .categoryBtn {
+      padding: 10px 24px;
+      border: 2px solid transparent;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--card-bg, #f0f4f8);
+      color: var(--text-primary, #2d3e50);
+      &:first-child {
+        display: none;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary, #2b6c9e);
+      }
+
+      &.active {
+        background: var(--primary, #2b6c9e);
+        color: var(--admin-text);
+        border-color: var(--primary, #2b6c9e);
+      }
+    }
+  }
+
+  .searchBar {
+    width: 50%;
+    position: relative;
+
+    .searchIcon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary, #94a3b8);
+      font-size: 1.2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 40px;
+      background: var(--input-bg, #ffffff);
+      color: var(--admin-text, #1e293b);
+      font-size: 1rem;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: var(--primary, #2563eb);
+        box-shadow: 0 0 0 3px
+          color-mix(in srgb, var(--primary, #2563eb) 20%, transparent);
+      }
+    }
+  }
+  .card {
+    width: 410px;
+    height: 470px;
+    background: var(--card-bg, #ffffff);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+    // border: 1px solid var(--border-color, #edf2f7);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(
+        --card-shadow-hover,
+        0 12px 24px -8px rgba(0, 0, 0, 0.15)
+      );
+    }
+
+    .categoryBadge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image {
+      height: 260px;
+      background: var(--image-placeholder-bg, #f1f5f9);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      padding: 20px;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: var(--admin-text, #1e293b);
+        padding-right: 40px;
+      }
+
+      .details {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 12px;
+
+        .detail {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          color: var(--primary, #2563eb);
+          font-weight: 500;
+          font-size: 0.95rem;
+
+          svg {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .empty {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--card-bg, #ffffff);
+    border-radius: 28px;
+    border: 1px solid var(--border-color, #e9eef2);
+    color: var(--text-secondary, #64748b);
+  }
+
+  .dialog {
+    :global {
+      .MuiPaper-root {
+        background: var(--card-bg, #ffffff);
+        color: var(--admin-text, #1e293b);
+        border-radius: 24px;
+      }
+    }
+  }
+}
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .content_all {
+    padding: 60px 20px;
+  }
+  .content_all .card {
+    width: 360px;
+    height: 440px;
+  }
+  .content_all .card .image {
+    height: 230px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .content_all {
+    padding: 50px 20px;
+  }
+  .content_all .content_header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .content_all .content_header h1 {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .content_all .searchBar {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .content_all .grid {
+    justify-content: center;
+    gap: 20px;
+  }
+  .content_all .card {
+    width: 330px;
+    height: 420px;
+  }
+  .content_all .card .image {
+    height: 210px;
+  }
+  .content_all .card .content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .content_all {
+    padding: 40px 15px;
+  }
+  .content_all .content_header h1 {
+    font-size: 1.6rem;
+  }
+  .content_all .searchBar {
+    width: 100%;
+  }
+  .content_all .searchBar input {
+    padding: 12px 16px 12px 44px;
+    font-size: 0.95rem;
+  }
+  .content_all .categories {
+    margin-bottom: 30px;
+  }
+  .content_all .categories .categoryBtn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+  .content_all .grid {
+    justify-content: center;
+  }
+  .content_all .card {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    min-height: 400px;
+  }
+  .content_all .card .image {
+    height: 200px;
+  }
+  .content_all .card .content {
+    padding: 16px;
+  }
+  .content_all .card .content h3 {
+    font-size: 1rem;
+    padding-right: 30px;
+  }
+  .content_all .card .content .details {
+    gap: 12px;
+  }
+  .content_all .card .content .details .detail {
+    font-size: 0.85rem;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .content_all {
+    padding: 30px 10px;
+  }
+  .content_all .content_header h1 {
+    font-size: 1.4rem;
+  }
+  .content_all .content_header .refreshBtn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .content_all .searchBar input {
+    padding: 10px 14px 10px 40px;
+    font-size: 0.9rem;
+  }
+  .content_all .searchBar .searchIcon {
+    left: 12px;
+    font-size: 1rem;
+  }
+  .content_all .categories {
+    gap: 4px;
+    margin-bottom: 25px;
+  }
+  .content_all .categories .categoryBtn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 30px;
+  }
+  .content_all .grid {
+    gap: 15px;
+  }
+  .content_all .card {
+    max-width: 100%;
+  }
+  .content_all .card .categoryBadge {
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+  .content_all .card .image {
+    height: 180px;
+  }
+  .content_all .card .content {
+    padding: 14px;
+  }
+  .content_all .card .content h3 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding-right: 25px;
+  }
+  .content_all .card .content .details {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .content_all .card .content .details .detail {
+    font-size: 0.8rem;
+  }
+  .content_all .empty {
+    padding: 50px 15px;
+    font-size: 0.95rem;
+  }
+  .content_all .empty h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,321 @@
+.footer {
+  background: var(
+    --footer-bg,
+    linear-gradient(135deg, #1a2f4a 0%, #0e1a2b 100%)
+  );
+  color: var(--footer-text, #ffffff);
+  padding: 60px 0 20px;
+  margin-top: 80px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.column {
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--footer-heading, #ffffff);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary, #4d7cff);
+      border-radius: 2px;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: var(--primary, #4d7cff);
+    border-radius: 15px;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--footer-heading, #ffffff);
+  }
+}
+
+.description {
+  color: var(--footer-text-secondary, rgba(255, 255, 255, 0.7));
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background: var(--primary, #4d7cff);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 12px;
+
+    a {
+      color: var(--footer-text-secondary, rgba(255, 255, 255, 0.7));
+      text-decoration: none;
+      transition:
+        color 0.3s,
+        padding-left 0.3s;
+
+      &:hover {
+        color: white;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.contactInfo {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--footer-text-secondary, rgba(255, 255, 255, 0.7));
+
+    svg {
+      color: var(--primary, #4d7cff);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    a {
+      color: var(--footer-text-secondary, rgba(255, 255, 255, 0.7));
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--footer-text-secondary, rgba(255, 255, 255, 0.5));
+  font-size: 0.9rem;
+
+  p {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--footer-text-secondary, rgba(255, 255, 255, 0.5));
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// Тёмная тема (уже через переменные, но для явности)
+:global(.dark-theme) {
+  .footer {
+    --footer-bg: linear-gradient(135deg, #0f1a2a 0%, #0a121f 100%);
+    --footer-text: #e9edf0;
+    --footer-heading: #ffffff;
+    --footer-text-secondary: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// Светлая тема (более светлый вариант для светлой темы)
+:global(.light-theme) {
+  .footer {
+    --footer-bg: linear-gradient(135deg, #2b6c9e 0%, #1f4f7a 100%);
+    --footer-text: #ffffff;
+    --footer-heading: #ffffff;
+    --footer-text-secondary: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Планшет (до 992px) - дополнение к существующему */
+@media (max-width: 992px) {
+  .footer {
+    padding: 50px 0 20px;
+    margin-top: 60px;
+  }
+  .footerContent {
+    gap: 30px;
+  }
+  .column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+  .logo span {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+  .logo h3 {
+    font-size: 1.3rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .socialLinks a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* У тебя уже есть @media (max-width: 768px) для footerContent, оставляем */
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 15px;
+    margin-top: 40px;
+  }
+  .footerContent {
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+  .column h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+
+    &::after {
+      width: 30px;
+      height: 2px;
+      bottom: -6px;
+    }
+  }
+  .logo {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  .logo span {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 12px;
+  }
+  .logo h3 {
+    font-size: 1.2rem;
+  }
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  .socialLinks {
+    gap: 10px;
+  }
+  .socialLinks a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  .links li {
+    margin-bottom: 8px;
+  }
+  .links li a {
+    font-size: 0.9rem;
+  }
+  .contactInfo li {
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+  .contactInfo li svg {
+    font-size: 1rem;
+  }
+  .bottom {
+    padding-top: 20px;
+    font-size: 0.8rem;
+  }
+  .bottom p {
+    margin-bottom: 8px;
+  }
+}
+
+/* Очень маленькие телефоны (до 360px) */
+@media (max-width: 360px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+  .logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .socialLinks {
+    flex-wrap: wrap;
+  }
+  .contactInfo li {
+    flex-wrap: wrap;
+  }
+}

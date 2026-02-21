@@ -1,0 +1,245 @@
+//! Interior Section - интерьер клиники
+.interior {
+  width: 100%;
+  padding: 80px 0;
+  background-color: var(--about-section-bg, #ffffff);
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.interiorGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.interiorCard {
+  background-color: var(--about-card-bg, #f9fbfd);
+  border-radius: var(--border-radius, 16px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--about-border, transparent);
+  width: 610px;
+  height: 390px;
+  margin-top: 50px;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--about-shadow, 0 10px 30px rgba(0, 0, 0, 0.05));
+    border-color: var(--primary, #2b6c9e);
+  }
+}
+
+.imagePlaceholder {
+  height: 250px;
+  object-fit: cover;
+  background: var(
+    --about-photo-bg,
+    linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)
+  );
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.interiorContent {
+  padding: 24px;
+}
+
+.interiorTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--about-text-primary, #2d3e50);
+  transition: color 0.3s;
+}
+
+.interiorDescription {
+  color: var(--about-text-secondary, #6b7a8a);
+  font-size: 14px;
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+// Documents Section
+.documents {
+  padding: 80px 0;
+  background: var(
+    --about-alt-bg,
+    linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)
+  );
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.documentsText {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: var(--about-text-secondary, #6b7a8a);
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.button {
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.buttonPrimary {
+  background-color: var(--primary, #2b6c9e);
+  color: white;
+
+  &:hover {
+    background-color: var(--primary-hover, #1f4f7a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px
+      color-mix(in srgb, var(--primary, #2b6c9e) 30%, transparent);
+  }
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  color: var(--primary, #2b6c9e);
+  border: 2px solid var(--primary, #2b6c9e);
+
+  &:hover {
+    background-color: var(--primary, #2b6c9e);
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--about-text-primary, #2d3e50);
+  position: relative;
+  transition: color 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--primary, #2b6c9e),
+      var(--accent, #6ac5b1)
+    );
+    margin: 16px auto 0;
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+}
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .interiorGrid {
+    justify-content: center;
+  }
+  .interiorCard {
+    width: 550px;
+    height: 350px;
+  }
+  .imagePlaceholder {
+    height: 220px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .interior {
+    padding: 60px 0;
+  }
+  .sectionTitle {
+    font-size: 32px;
+  }
+  .interiorGrid {
+    gap: 20px;
+  }
+  .interiorCard {
+    width: 480px;
+    height: 320px;
+  }
+  .imagePlaceholder {
+    height: 200px;
+  }
+  .interiorContent {
+    padding: 20px;
+  }
+  .interiorTitle {
+    font-size: 17px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .interior {
+    padding: 50px 0;
+  }
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .interiorGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .interiorCard {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 30px;
+  }
+  .imagePlaceholder {
+    height: 200px;
+  }
+  .interiorContent {
+    padding: 18px;
+  }
+  .interiorTitle {
+    font-size: 16px;
+  }
+  .interiorDescription {
+    font-size: 13px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .interior {
+    padding: 40px 0;
+  }
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  .interiorCard {
+    width: 95%;
+    margin-top: 20px;
+  }
+  .imagePlaceholder {
+    height: 180px;
+  }
+  .interiorContent {
+    padding: 15px;
+  }
+  .interiorTitle {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .interiorDescription {
+    font-size: 12px;
+  }
+}

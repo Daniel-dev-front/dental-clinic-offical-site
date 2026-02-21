@@ -1,0 +1,393 @@
+.dentalFactsHorizontal {
+  padding: 80px 20px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--text-primary, #2c3e50);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    color: var(--text-secondary, #546e7a);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+}
+
+.factCard {
+  display: flex;
+  background: var(--card-bg, white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow, 0 20px 60px rgba(0, 0, 0, 0.08));
+  min-height: 500px;
+  margin-bottom: 40px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover, 0 30px 80px rgba(0, 0, 0, 0.12));
+  }
+}
+
+// Левая часть - ФОТО
+.imageSide {
+  flex: 0 0 500px;
+  background: var(--image-side-bg, #e3f2fd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .imagePlaceholder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+
+    .placeholderText {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--placeholder-text, rgba(0, 0, 0, 0.6));
+      font-weight: 500;
+      margin-bottom: 12px;
+      max-width: 300px;
+    }
+
+    .placeholderNote {
+      font-size: 0.9rem;
+      color: var(--placeholder-note, rgba(0, 0, 0, 0.4));
+      font-style: italic;
+
+      img {
+        border-radius: 24px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Правая часть - ТЕКСТ
+.textSide {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  .factNumber {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--fact-number, rgba(0, 0, 0, 0.05));
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .content {
+    flex: 1;
+    margin-bottom: 40px;
+
+    .factTitle {
+      font-size: 2.2rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-primary, #2c3e50);
+      margin-bottom: 12px;
+      font-family: "Playfair Display", serif;
+    }
+
+    .factSubtitle {
+      font-size: 0.9rem;
+      color: var(--primary, #1976d2);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--border-color, #eceff1);
+      margin: 24px 0;
+    }
+
+    .factDescription {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-secondary, #546e7a);
+      max-width: 500px;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+
+    .navBtn {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--border-color, #eceff1);
+      background: var(--button-bg, white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      color: var(--text-secondary, #546e7a);
+
+      &:hover {
+        background: var(--primary, #1976d2);
+        border-color: var(--primary, #1976d2);
+        color: var(--button-hover-text, white);
+        transform: scale(1.05);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Montserrat", sans-serif;
+
+      .current {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary, #2c3e50);
+      }
+
+      .separator {
+        font-size: 1rem;
+        color: var(--text-light, #90a4ae);
+      }
+
+      .total {
+        font-size: 1rem;
+        color: var(--text-light, #90a4ae);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.factCard {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .dentalFactsHorizontal {
+    padding: 60px 20px;
+    margin-top: 100px;
+  }
+  .factCard {
+    min-height: 450px;
+  }
+  .imageSide {
+    flex: 0 0 400px;
+  }
+  .textSide {
+    padding: 40px;
+  }
+  .textSide .factNumber {
+    font-size: 4rem;
+  }
+  .textSide .content .factTitle {
+    font-size: 2rem;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .dentalFactsHorizontal {
+    padding: 50px 15px;
+    margin-top: 80px;
+  }
+  .sectionHeader {
+    margin-bottom: 50px;
+  }
+  .sectionHeader .sectionTitle {
+    font-size: 2.2rem;
+  }
+  .factCard {
+    min-height: 400px;
+  }
+  .imageSide {
+    flex: 0 0 350px;
+  }
+  .textSide {
+    padding: 30px;
+  }
+  .textSide .factNumber {
+    font-size: 3.5rem;
+  }
+  .textSide .content .factTitle {
+    font-size: 1.8rem;
+  }
+  .textSide .content .factDescription {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+  .textSide .navigation .navBtn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .dentalFactsHorizontal {
+    padding: 40px 15px;
+    margin-top: 60px;
+  }
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  .sectionHeader .sectionTitle {
+    font-size: 2rem;
+  }
+  .sectionHeader .sectionSubtitle {
+    font-size: 0.9rem;
+  }
+  .factCard {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .imageSide {
+    flex: 0 0 250px;
+    width: 100%;
+  }
+  .imageSide .imagePlaceholder {
+    padding: 30px;
+  }
+  .imageSide .imagePlaceholder img {
+    max-width: 100%;
+    height: auto;
+  }
+  .textSide {
+    padding: 30px;
+  }
+  .textSide .factNumber {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .textSide .content .factTitle {
+    font-size: 1.6rem;
+  }
+  .textSide .content .factDescription {
+    max-width: 100%;
+  }
+  .textSide .navigation {
+    justify-content: center;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .dentalFactsHorizontal {
+    padding: 30px 10px;
+    margin-top: 40px;
+  }
+  .sectionHeader {
+    margin-bottom: 30px;
+  }
+  .sectionHeader .sectionTitle {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+  .sectionHeader .sectionSubtitle {
+    font-size: 0.8rem;
+  }
+  .factCard {
+    border-radius: 20px;
+  }
+  .imageSide {
+    flex: 0 0 200px;
+  }
+  .imageSide .imagePlaceholder {
+    padding: 20px;
+  }
+  .imageSide .imagePlaceholder .placeholderText {
+    font-size: 1rem;
+  }
+  .imageSide .imagePlaceholder .placeholderNote {
+    font-size: 0.8rem;
+  }
+  .textSide {
+    padding: 20px;
+  }
+  .textSide .factNumber {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+  }
+  .textSide .content {
+    margin-bottom: 20px;
+  }
+  .textSide .content .factTitle {
+    font-size: 1.3rem;
+  }
+  .textSide .content .factSubtitle {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
+  .textSide .content .divider {
+    width: 40px;
+    margin: 15px 0;
+  }
+  .textSide .content .factDescription {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .textSide .navigation {
+    gap: 10px;
+  }
+  .textSide .navigation .navBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .textSide .navigation .counter .current {
+    font-size: 1.2rem;
+  }
+  .textSide .navigation .counter .separator,
+  .textSide .navigation .counter .total {
+    font-size: 0.9rem;
+  }
+}

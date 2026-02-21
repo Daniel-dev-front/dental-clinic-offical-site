@@ -1,0 +1,299 @@
+// Основные стили с CSS-переменными для тем
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: var(--about-text-primary, #2d3e50);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--about-bg, #ffffff);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--about-badge-bg, rgba(43, 108, 158, 0.1));
+  color: var(--primary, #2b6c9e);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--about-text-primary, #2d3e50);
+  line-height: 1.2;
+  transition: color 0.3s;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--about-text-secondary, #6b7a8a);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: color 0.3s;
+}
+
+.highlight {
+  color: var(--primary, #2b6c9e);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: var(--about-highlight-bg, rgba(106, 197, 177, 0.2));
+    z-index: -1;
+    transition: background-color 0.3s;
+  }
+}
+
+// Section Title
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--about-text-primary, #2d3e50);
+  position: relative;
+  transition: color 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--primary, #2b6c9e),
+      var(--accent, #6ac5b1)
+    );
+    margin: 16px auto 0;
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+}
+
+//! Interior Section - интерьер клиники
+.interior {
+  padding: 80px 0;
+  background-color: var(--about-section-bg, #ffffff);
+  transition: background-color 0.3s;
+}
+
+.interiorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.interiorCard {
+  background-color: var(--about-card-bg, #f9fbfd);
+  border-radius: var(--border-radius, 16px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--about-border, transparent);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--about-shadow, 0 10px 30px rgba(0, 0, 0, 0.05));
+    border-color: var(--primary, #2b6c9e);
+  }
+}
+
+.imagePlaceholder {
+  height: 200px;
+  background: var(
+    --about-photo-bg,
+    linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)
+  );
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.interiorContent {
+  padding: 24px;
+}
+
+.interiorTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--about-text-primary, #2d3e50);
+  transition: color 0.3s;
+}
+
+.interiorDescription {
+  color: var(--about-text-secondary, #6b7a8a);
+  font-size: 14px;
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 16px;
+    max-width: 700px;
+  }
+  .interiorGrid {
+    gap: 20px;
+  }
+  .interiorCard {
+    width: 100%;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 20px;
+  }
+  .badge {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .sectionTitle {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .interior {
+    padding: 60px 0;
+  }
+  .interiorGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .interiorCard {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .imagePlaceholder {
+    height: 250px;
+  }
+  .interiorContent {
+    padding: 20px;
+  }
+  .interiorTitle {
+    font-size: 17px;
+  }
+  .interiorDescription {
+    font-size: 13px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .badge {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .interior {
+    padding: 50px 0;
+  }
+  .interiorCard {
+    max-width: 500px;
+  }
+  .imagePlaceholder {
+    height: 220px;
+  }
+  .interiorContent {
+    padding: 18px;
+  }
+  .interiorTitle {
+    font-size: 16px;
+  }
+  .interiorDescription {
+    font-size: 12px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .sectionTitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  .sectionTitle::after {
+    width: 40px;
+    height: 3px;
+    margin: 12px auto 0;
+  }
+  .interior {
+    padding: 40px 0;
+  }
+  .interiorCard {
+    max-width: 100%;
+  }
+  .imagePlaceholder {
+    height: 200px;
+  }
+  .interiorContent {
+    padding: 16px;
+  }
+  .interiorTitle {
+    font-size: 15px;
+  }
+  .interiorDescription {
+    font-size: 12px;
+  }
+}

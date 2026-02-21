@@ -1,0 +1,161 @@
+//! Principles Section - принципы клиники
+.principles {
+  width: 100%;
+
+  padding: 80px 0;
+  background-color: var(--about-section-bg, #ffffff);
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.principlesGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.principleCard {
+  width: 440px;
+  height: 440px;
+  background-color: var(--about-card-bg, #f9fbfd);
+  border-radius: var(--border-radius, 16px);
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 40px;
+  border: 1px solid var(--about-border, transparent);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--about-shadow, 0 10px 30px rgba(0, 0, 0, 0.05));
+    border-color: var(--primary, #2b6c9e);
+  }
+}
+
+.iconWrapper {
+  font-size: 48px;
+  margin-bottom: 24px;
+  color: var(--primary, #2b6c9e);
+}
+
+.principleTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--about-text-primary, #2d3e50);
+  transition: color 0.3s;
+}
+
+.principleText {
+  color: var(--about-text-secondary, #6b7a8a);
+  font-size: 15px;
+  line-height: 1.7;
+  transition: color 0.3s;
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .principlesGrid {
+    gap: 15px;
+  }
+  .principleCard {
+    width: 380px;
+    height: 380px;
+    padding: 30px;
+  }
+  .iconWrapper {
+    font-size: 42px;
+  }
+  .principleTitle {
+    font-size: 19px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .principles {
+    padding: 60px 0;
+  }
+  .sectionTitle {
+    font-size: 32px;
+  }
+  .principlesGrid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .principleCard {
+    width: 340px;
+    height: 340px;
+    padding: 25px;
+  }
+  .iconWrapper {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  .principleTitle {
+    font-size: 18px;
+  }
+  .principleText {
+    font-size: 14px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .principles {
+    padding: 50px 0;
+  }
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .principlesGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .principleCard {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    min-height: 300px;
+  }
+  .iconWrapper {
+    font-size: 36px;
+  }
+  .principleTitle {
+    font-size: 17px;
+  }
+  .principleText {
+    font-size: 13px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .principles {
+    padding: 40px 0;
+  }
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  .principleCard {
+    width: 95%;
+    padding: 20px;
+  }
+  .iconWrapper {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .principleTitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .principleText {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,309 @@
+.productDetail {
+  padding: 40px 20px;
+  min-height: 70vh;
+  color: var(--admin-text, #1e293b);
+  font-family: inter;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--primary, #2563eb);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--primary, #2563eb) 10%, transparent);
+  }
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  button {
+    width: 100%;
+    height: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    border-radius: 30px;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.viewBtn {
+      background: color-mix(in srgb, var(--primary, #2563eb) 10%, transparent);
+      color: var(--primary, #2563eb);
+      &:hover {
+        background: color-mix(
+          in srgb,
+          var(--primary, #2563eb) 20%,
+          transparent
+        );
+      }
+    }
+
+    &.editBtn {
+      background: color-mix(in srgb, var(--accent, #7c3aed) 10%, transparent);
+      color: var(--accent, #7c3aed);
+      &:hover {
+        background: color-mix(in srgb, var(--accent, #7c3aed) 20%, transparent);
+      }
+    }
+
+    &.deleteBtn {
+      background: color-mix(in srgb, var(--danger, #ef4444) 10%, transparent);
+      color: var(--danger, #ef4444);
+      &:hover {
+        background: color-mix(in srgb, var(--danger, #ef4444) 20%, transparent);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: var(--card-bg, #ffffff);
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #e9eef2);
+}
+
+.imageSection {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--image-placeholder-bg, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .noImage {
+    color: var(--text-secondary, #94a3b8);
+    font-size: 1rem;
+  }
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--admin-text, #1e293b);
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary, #2563eb);
+    margin: 0;
+  }
+
+  .description {
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--admin-text, #1e293b);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary, #64748b);
+    }
+  }
+
+  .addToCartBtn {
+    background: var(--primary, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+    box-shadow: 0 8px 18px
+      color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+
+    &:hover {
+      background: var(--primary-hover, #1d4ed8);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px
+        color-mix(in srgb, var(--primary, #2563eb) 40%, transparent);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 100px;
+  color: var(--text-secondary, #64748b);
+}
+
+.notFound {
+  text-align: center;
+  padding: 100px;
+  color: var(--text-secondary, #64748b);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 24px;
+  }
+
+  .infoSection h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .productDetail {
+    padding: 30px 16px;
+  }
+  .content {
+    gap: 40px;
+    padding: 30px;
+  }
+  .infoSection h1 {
+    font-size: 2.2rem;
+  }
+  .infoSection .price {
+    font-size: 1.8rem;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .content {
+    gap: 30px;
+    padding: 24px;
+  }
+  .imageSection {
+    min-height: 350px;
+  }
+  .infoSection h1 {
+    font-size: 2rem;
+  }
+  .infoSection .price {
+    font-size: 1.6rem;
+  }
+  .infoSection .description p {
+    font-size: 1rem;
+  }
+  .infoSection .addToCartBtn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* У тебя уже есть @media 768px, он в порядке. */
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .productDetail {
+    padding: 20px 12px;
+  }
+  .backButton {
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  .content {
+    padding: 16px;
+    gap: 20px;
+  }
+  .imageSection {
+    min-height: 250px;
+    border-radius: 16px;
+  }
+  .infoSection {
+    gap: 16px;
+  }
+  .infoSection h1 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+  .infoSection .price {
+    font-size: 1.4rem;
+  }
+  .infoSection .description h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .infoSection .description p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .infoSection .addToCartBtn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .actions button {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .loading,
+  .notFound {
+    padding: 60px 16px;
+  }
+  .notFound h2 {
+    font-size: 1.5rem;
+  }
+}

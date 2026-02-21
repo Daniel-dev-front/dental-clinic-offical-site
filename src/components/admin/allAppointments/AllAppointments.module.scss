@@ -1,0 +1,399 @@
+.allAppointments {
+  padding: 24px;
+  color: var(--admin-text, #1e293b);
+  font-family: inter;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(
+      135deg,
+      var(--primary, #2563eb),
+      var(--accent, #7c3aed)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    svg {
+      vertical-align: middle;
+      margin-right: 8px;
+      color: linear-gradient(
+        135deg,
+        var(--primary, #2563eb),
+        var(--accent, #7c3aed)
+      );
+    }
+  }
+
+  .refreshBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 40px;
+    padding: 10px 24px;
+    color: var(--admin-text, #1e293b);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: var(--border-color, #e2e8f0);
+      transform: translateY(-2px);
+    }
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.table {
+  background: var(--card-bg, #ffffff);
+  border-radius: 28px;
+  border: 1px solid var(--border-color, #e9eef2);
+  overflow: hidden;
+  box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.05));
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1.5fr 1fr 1fr 1fr 1.2fr;
+  background: var(--primary, #2563eb);
+  color: white;
+  font-weight: 600;
+  padding: 16px 24px;
+  gap: 16px;
+
+  span {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1.5fr 1fr 1fr 1fr 1.2fr;
+  padding: 16px 24px;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color, #e9eef2);
+  transition: background 0.2s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--primary, #2563eb) 5%, transparent);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  > span {
+    font-size: 0.95rem;
+    color: var(--admin-text, #1e293b);
+    word-break: break-word;
+  }
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 30px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 100px;
+}
+
+.actions {
+  .editBtn {
+    background: none;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 30px;
+    padding: 6px 16px;
+    color: var(--primary, #2563eb);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: var(--primary, #2563eb);
+      color: white;
+      border-color: var(--primary, #2563eb);
+    }
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg, #ffffff);
+  border-radius: 28px;
+  border: 1px solid var(--border-color, #e9eef2);
+
+  svg {
+    color: var(--text-secondary, #64748b);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--admin-text, #1e293b);
+    margin-bottom: 8px;
+  }
+}
+
+// Стили для диалога
+.dialog {
+  :global {
+    .MuiPaper-root {
+      background: var(--card-bg, #ffffff);
+      color: var(--admin-text, #1e293b);
+      border-radius: 32px;
+      box-shadow: var(
+        --card-shadow-hover,
+        0 25px 50px -12px rgba(0, 0, 0, 0.25)
+      );
+      border: 1px solid var(--border-color, #e9eef2);
+      max-width: 450px;
+      width: 100%;
+      padding: 8px;
+    }
+
+    .MuiDialogTitle-root {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 24px 24px 8px;
+      color: var(--admin-text, #1e293b);
+      text-align: center;
+    }
+
+    .MuiDialogContent-root {
+      padding: 24px;
+
+      p {
+        background: var(--input-bg, #f8fafc);
+        padding: 16px;
+        border-radius: 20px;
+        margin: 0;
+        line-height: 1.8;
+        color: var(--admin-text, #1e293b);
+
+        strong {
+          color: var(--primary, #2563eb);
+        }
+      }
+    }
+
+    .MuiDialogActions-root {
+      padding: 8px 24px 24px;
+      justify-content: center;
+    }
+  }
+}
+
+.statusButtons {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.statusBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 140px;
+  justify-content: center;
+
+  &.confirm {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+
+    &:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+    }
+  }
+
+  &.cancel {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 8px 16px rgba(239, 68, 68, 0.3);
+
+    &:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(239, 68, 68, 0.4);
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  svg {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+
+    div {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    overflow-x: auto;
+  }
+
+  .tableHeader,
+  .tableRow {
+    min-width: 900px;
+  }
+
+  .statusButtons {
+    flex-direction: column;
+
+    .statusBtn {
+      width: 100%;
+    }
+  }
+}
+// ... (твой существующий код, включая @media 1024px и 768px) ...
+
+/* ===== Дополнительная адаптивность ===== */
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .allAppointments {
+    padding: 20px;
+  }
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1.4fr 1.1fr 1.4fr 1fr 1fr 1fr 1.1fr;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .header h2 {
+    font-size: 24px;
+  }
+  .refreshBtn {
+    padding: 8px 20px;
+  }
+  /* У тебя уже есть @media 1024px, он примерно на это же */
+}
+
+/* Маленький планшет (до 768px) */
+/* У тебя уже есть хороший @media 768px, оставляем */
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .allAppointments {
+    padding: 12px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .header h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .header h2 svg {
+    display: block;
+    margin: 0 auto 4px;
+  }
+  .refreshBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+  .table {
+    border-radius: 20px;
+  }
+  .tableHeader,
+  .tableRow {
+    min-width: 800px; /* Оставляем горизонтальный скролл */
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .tableHeader span,
+  .tableRow span {
+    font-size: 0.85rem;
+  }
+  .statusBadge {
+    min-width: 80px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  .actions .editBtn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+  }
+  .empty {
+    padding: 50px 16px;
+  }
+  .empty h3 {
+    font-size: 1.3rem;
+  }
+  .empty svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Стили для диалога */
+  .dialog :global .MuiPaper-root {
+    max-width: 95%;
+    margin: 10px;
+  }
+  .statusButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .statusBtn {
+    width: 100%;
+    padding: 10px 20px;
+    min-width: auto;
+  }
+}

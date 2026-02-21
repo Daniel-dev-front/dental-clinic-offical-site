@@ -1,0 +1,441 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "store": "Store",
+    "register": "Register",
+    "profile": "Profile",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "services": "Services",
+    "contacts": "Contacts",
+    "aboutUs": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "allRightsReserved": "All rights reserved",
+    "workHours": "Mon-Sun: 09:00 - 21:00",
+    "callUs": "Or call us",
+    "address": "Bishkek, Frunze St. 4b"
+  },
+  "home": {
+    "main": {
+      "title": "Dental Clinic - With us",
+      "bookButton": "Book an appointment",
+      "features": {
+        "painless": "Painless",
+        "modern": "Modern",
+        "guarantee": "Guarantee"
+      }
+    },
+    "trust": {
+      "title": "Dentistry you can trust.",
+      "description": "Our Dental Clinic has been operating for over 5 years, providing dental care for adults and children. We offer prevention, treatment and aesthetic dentistry, helping patients maintain healthy teeth as comfortably as possible.",
+      "button": "About us"
+    },
+    "services": {
+      "title": "Full range of dental services in one place",
+      "moreButton": "More details"
+    },
+    "store": {
+      "title": "Useful products",
+      "highlight": "for the whole family",
+      "subtitle": "Toothpastes, brushes, care products and much more",
+      "button": "Go to store"
+    },
+    "advantages": {
+      "title": "Why choose",
+      "highlight": "us",
+      "subtitle": "We care about your health and comfort",
+      "items": {
+        "experienced": "Experienced doctors",
+        "painless": "Painless",
+        "noQueue": "No queues",
+        "warranty": "Warranty",
+        "dreamSmile": "Dream smile",
+        "modern": "Modern"
+      }
+    }
+  },
+  "about": {
+    "title": "About Dental Clinic",
+    "badge": "More than just dentistry",
+    "description": "We created Dental Clinic not just as a treatment room, but as a place where people stop being afraid of dentists. For over {{years}} years we have been proving that a visit to the doctor can be comfortable, calm and even enjoyable.",
+    "principles": {
+      "title": "Our principles",
+      "item1": {
+        "title": "Ideal cleanliness is our obsession",
+        "text": "We adhere to operating room standards. All instruments undergo multi-stage cleaning and sterilization in autoclaves. Disposable materials are used strictly for one patient. Your safety is the foundation of our treatment."
+      },
+      "item2": {
+        "title": "Treatment without pain and fear",
+        "text": "Computed tomography (3D image), laser therapy, microscope, intraoral scanners and sedation. We use the best equipment to make the process fast, accurate and absolutely painless."
+      },
+      "item3": {
+        "title": "The best doctors work here",
+        "text": "There are no random people in our team. These are doctors who constantly learn new things, share experiences and truly love their profession."
+      }
+    },
+    "doctors": {
+      "title": "Doctors you can trust with your smile",
+      "experience": "Experience"
+    },
+    "interior": {
+      "title": "Space created for your comfort",
+      "items": {
+        "waiting": {
+          "title": "Bright waiting area",
+          "desc": "Soft sofas, fresh press, water and coffee. It's pleasant to be here."
+        },
+        "cabinet": {
+          "title": "Modern office",
+          "desc": "Comfortable chair, sterile environment, monitor showing your image."
+        },
+        "reception": {
+          "title": "Reception",
+          "desc": "Administrators are always friendly and will help with any question."
+        },
+        "operating": {
+          "title": "Operating room",
+          "desc": "Perfect order and the latest equipment for implantation."
+        }
+      }
+    },
+    "documents": {
+      "title": "We are open",
+      "description": "We don't want to be a 'black box'. We are confident in our professionalism and quality of equipment. On our website you can always view documents confirming our right to treat.",
+      "licenses": "View licenses and certificates",
+      "diplomas": "Doctors' diplomas",
+      "licenseTitle": "Licenses and certificates",
+      "diplomaTitle": "Doctors' diplomas",
+      "number": "Number",
+      "date": "Issue date",
+      "issuer": "Issued by"
+    },
+    "map": {
+      "title": "🗺️ How to find us?",
+      "subtitle": "6 dental clinics throughout Bishkek",
+      "clinics": "Our clinics",
+      "call": "Call"
+    },
+    "reviews": {
+      "title": "Reviews about {{name}}",
+      "loginPrompt": "Please log in to leave a review",
+      "alreadyVisited": "Have you visited us?",
+      "share": "Share your treatment experience",
+      "leaveReview": "Leave a review",
+      "yourReview": "Your review",
+      "rating": "Rating",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "noReviews": "No reviews yet. Be the first!"
+    },
+    "cta": {
+      "title": "Want to make sure we're right for each other?",
+      "text": "Come meet us! Initial consultation with examination and treatment plan is conducted in a calm, friendly atmosphere without rushing.",
+      "button": "Book a free consultation",
+      "dialogTitle": "Free consultation booking",
+      "name": "Full name",
+      "date": "Date",
+      "time": "Time",
+      "phone": "Phone",
+      "reason": "Reason (optional)",
+      "book": "Book"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "search": "Search by name, category or doctor...",
+    "notFound": "Services not found",
+    "all": "all"
+  },
+  "store": {
+    "title": "Our Store",
+    "search": "Search by name, category",
+    "notFound": "Products not found",
+    "all": "All",
+    "addToCart": "Add to cart",
+    "addToWishlist": "Add to wishlist"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "phone": "Phone",
+    "createAccount": "Create account",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginWithGoogle": "Sign in with Google",
+    "logout": "Logout",
+    "welcomeBack": "Welcome back!",
+    "enterDetails": "Enter your details",
+    "passwordTooShort": "Password too short (minimum 6 characters)",
+    "error": "Invalid email or password"
+  },
+  "client": {
+    "dashboard": {
+      "welcome": "Welcome",
+      "inWishlist": "In wishlist",
+      "inCart": "In cart",
+      "appointments": "Appointments",
+      "wishlist": "Wishlist",
+      "cart": "Cart",
+      "myAppointments": "My appointments",
+      "settings": "Settings"
+    },
+    "wishlist": {
+      "title": "Wishlist",
+      "empty": "Wishlist is empty",
+      "emptyDesc": "Add items to wishlist to keep them",
+      "goToStore": "Go to store",
+      "addToCart": "Add to cart",
+      "remove": "Remove"
+    },
+    "cart": {
+      "title": "Cart",
+      "empty": "Cart is empty",
+      "emptyDesc": "Add items to cart to place an order",
+      "clearAll": "Clear all",
+      "total": "Total",
+      "checkout": "Checkout",
+      "remove": "Remove",
+      "quantity": "Quantity",
+      "goToStore": "Go to store",
+      "clearConfirm": "Clear entire cart?"
+    },
+    "appointments": {
+      "title": "My appointments",
+      "book": "Book",
+      "empty": "No appointments yet",
+      "emptyDesc": "Book an appointment right now",
+      "doctor": "Doctor",
+      "date": "Date",
+      "time": "Time",
+      "phone": "Phone",
+      "reason": "Reason",
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "cancelled": "Cancelled"
+      },
+      "cancel": "Cancel appointment",
+      "bookDialog": "Book appointment",
+      "confirmDelete": "Are you sure you want to cancel this appointment?"
+    },
+    "settings": {
+      "title": "Profile settings",
+      "basicInfo": "Basic information",
+      "changePassword": "Change password",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "save": "Save",
+      "cancel": "Cancel",
+      "emailCannotBeChanged": "Email cannot be changed",
+      "passwordChanged": "Password changed",
+      "profileUpdated": "Profile updated"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin panel",
+      "welcome": "Welcome",
+      "admin": "Administrator",
+      "products": "Products",
+      "doctors": "Doctors",
+      "services": "Services",
+      "appointments": "Appointments",
+      "addProduct": "Add product",
+      "addService": "Add service",
+      "allAppointments": "All appointments",
+      "latestProducts": "Latest products",
+      "noPhoto": "No photo"
+    },
+    "sidebar": {
+      "home": "Home",
+      "addProduct": "Add product",
+      "addService": "Add service",
+      "allProducts": "All products",
+      "allServices": "All services",
+      "appointments": "Appointments list",
+      "doctors": "Doctors",
+      "logout": "Logout"
+    },
+    "products": {
+      "title": "All products",
+      "addButton": "Add product",
+      "search": "Search products...",
+      "notFound": "Products not found",
+      "price": "som",
+      "edit": "Edit",
+      "delete": "Delete",
+      "view": "View",
+      "noImage": "No image",
+      "confirmDelete": "Are you sure you want to delete this product?"
+    },
+    "services": {
+      "title": "All services",
+      "addButton": "Add service",
+      "search": "Search services...",
+      "notFound": "Services not found",
+      "price": "som",
+      "duration": "min",
+      "doctor": "Doctor",
+      "edit": "Edit",
+      "delete": "Delete",
+      "noImage": "No image",
+      "confirmDelete": "Are you sure you want to delete this service?"
+    },
+    "appointments": {
+      "title": "Appointments list",
+      "refresh": "Refresh",
+      "noAppointments": "No appointments",
+      "client": "Client",
+      "phone": "Phone",
+      "doctor": "Doctor",
+      "date": "Date",
+      "time": "Time",
+      "status": "Status",
+      "actions": "Actions",
+      "changeStatus": "Change status",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "close": "Close"
+    },
+    "doctors": {
+      "title": "Doctors management",
+      "addButton": "Add doctor",
+      "search": "Search by name or specialty...",
+      "notFound": "Doctors not found",
+      "specialty": "Specialty",
+      "experience": "Experience",
+      "years": "years",
+      "phone": "Phone",
+      "email": "Email",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirmDelete": "Are you sure you want to delete this doctor?"
+    }
+  },
+  "common": {
+    "currency": "som",
+    "min": "min",
+    "years": "years",
+    "anonymous": "Anonymous",
+    "client": "Client",
+    "reviews": "reviews",
+    "other": "Other",
+    "noImage": "No image",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "search": "Search",
+    "refresh": "Refresh",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "Error",
+    "name": "Name",
+    "price": "Price",
+    "description": "Description",
+    "image": "Image",
+    "category": "Category",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "preview": "Preview",
+    "photo": "Photo",
+    "bio": "Bio",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "youknow": {
+    "title": "INTERESTING FACTS",
+    "subtitle": "About the amazing biology of teeth",
+    "facts": {
+      "1": {
+        "title": "CHEWING SYMMETRY",
+        "subtitle": "Dominant side",
+        "description": "87% of people chew food on the same side they write with. Left-handers use the left side of the jaw, right-handers use the right. This is an example of neuromuscular coordination."
+      },
+      "2": {
+        "title": "BIOLOGICAL ARCHIVE",
+        "subtitle": "Memory of teeth",
+        "description": "Teeth store information about childhood nutrition and climate, like tree rings. This is a natural time capsule of your body."
+      },
+      "3": {
+        "title": "SMILE",
+        "subtitle": "Neurobiology of happiness",
+        "description": "The brain produces endorphins in response to a smile — even an artificial one. Simple facial expressions trigger the biochemistry of joy."
+      },
+      "4": {
+        "title": "PEARL SHADE",
+        "subtitle": "Health aesthetics",
+        "description": "The natural shade of healthy teeth is not snow-white, but with a slight creamy undertone. This indicates dense, high-quality enamel."
+      },
+      "5": {
+        "title": "REGENERATION",
+        "subtitle": "Ability to recover",
+        "description": "A knocked-out tooth can re-implant if returned to the socket within 30 minutes. Amazing vitality of the natural system."
+      },
+      "6": {
+        "title": "SALIVA",
+        "subtitle": "Liquid crystal",
+        "description": "Saliva contains a complete mineral complex for micro-restoration of enamel. This is an autonomous 24/7 protection system."
+      },
+      "7": {
+        "title": "CHEESE",
+        "subtitle": "Gastronomic protection",
+        "description": "Hard cheese after eating creates a protective film on the enamel. A natural product with ideal calcium bioavailability."
+      },
+      "8": {
+        "title": "PRICELESSNESS",
+        "subtitle": "Uniqueness of the original",
+        "description": "A healthy tooth cannot be artificially reproduced with 100% biological accuracy. This is an ideal engineering system."
+      },
+      "9": {
+        "title": "Ancient technologies",
+        "subtitle": "Evolution",
+        "description": "The first dental 'drills' appeared 9,000 years ago (found in Pakistan), and the Maya decorated teeth with precious stones, inserting them directly into the enamel."
+      },
+      "10": {
+        "title": "Effects of smoking",
+        "subtitle": "Hidden threats",
+        "description": "Nicotine tars create a sticky film that turns into stone within 48 hours, and constriction of gum vessels 'masks' bleeding, hiding the development of periodontitis until tooth loss."
+      }
+    }
+  },
+  "footer": {
+    "aboutUs": "Modern dentistry with care for your health and comfort. Over 15 years of experience and thousands of satisfied patients.",
+    "navigation": "Navigation",
+    "services": "Services",
+    "contacts": "Contacts",
+    "address": "Bishkek, Frunze St. 4b",
+    "workHours": "Mon-Sun: 09:00 - 21:00",
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "services": {
+    "list": {
+      "therapy": "Dental treatment",
+      "implantation": "Implantation",
+      "orthodontics": "Orthodontics",
+      "surgery": "Surgery",
+      "hygiene": "Hygiene"
+    }
+  }
+}

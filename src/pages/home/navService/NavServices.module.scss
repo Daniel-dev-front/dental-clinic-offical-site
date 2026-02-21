@@ -1,0 +1,308 @@
+.content_nav {
+  margin-top: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  .nav_text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      font-weight: 600;
+      font-family: inter;
+      font-size: 26px;
+      color: var(--nav-heading, #00296d); /* переменная для заголовка */
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    view-timeline-name: --revealing-block;
+    view-timeline-axis: block;
+    animation: reveal linear both;
+    animation-timeline: --revealing-block;
+    animation-range: entry 50% cover 40%;
+    div {
+      width: 390px;
+      height: 240px;
+    }
+
+    // Базовые стили для всех карточек (повторяющиеся свойства)
+    [class*="first"],
+    [class*="second"],
+    [class*="three"],
+    [class*="four"],
+    [class*="five"],
+    [class*="six"] {
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 20px;
+    }
+
+    .first,
+    .three,
+    .five {
+      .cont {
+        overflow: hidden;
+        background: linear-gradient(
+          var(--overlay-dark, rgba(2, 81, 199, 0.9))
+        ); /* тёмный оверлей */
+      }
+    }
+
+    .second,
+    .four,
+    .six {
+      .cont {
+        overflow: hidden;
+
+        background: linear-gradient(
+          var(--overlay-light, rgba(153, 208, 238, 0.9))
+        ); /* светлый оверлей */
+      }
+    }
+
+    // Общие стили для .cont
+    .cont {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      line-height: 120%;
+      overflow: hidden;
+
+      h3 {
+        font-family: inter;
+        font-size: 19px;
+        font-weight: 600;
+      }
+
+      p {
+        font-family: inter;
+        color: #fff; /* текст на оверлее всегда белый для контраста */
+        text-align: left;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    // Индивидуальные цвета заголовков для разных оверлеев
+    .first,
+    .three,
+    .five {
+      background-color: var(--card-dark-bg, transparent);
+
+      .cont h3 {
+        color: #fff;
+      }
+    }
+
+    .second,
+    .four,
+    .six {
+      background-color: var(--card-light-bg, transparent);
+
+      .cont h3 {
+        color: var(
+          --overlay-dark,
+          rgba(2, 81, 199, 0.9)
+        ); /* тёмный текст на светлом оверлее */
+      }
+    }
+
+    // Фоновые изображения (остаются без изменений)
+    .first {
+      background-image: url("https://daclinic.kg/uploads/services/dc2b391b-d738-4d86-b784-5876e429098d.webp?w=640&q=75");
+    }
+    .second {
+      background-image: url("https://daclinic.kg/uploads/services/da56e913-d5d8-4457-945e-5fd46ffa6efd.webp?w=640&q=75");
+    }
+    .three {
+      background-image: url("https://daclinic.kg/uploads/services/5cde4007-0570-4f04-a1dc-d672f037cf29.webp?w=1080&q=75");
+    }
+    .four {
+      background-image: url("https://daclinic.kg/uploads/services/e0654c7e-b5cd-4acc-93de-d8dc98ac1dc1.webp?w=1080&q=75");
+    }
+    .five {
+      background-image: url("https://daclinic.kg/uploads/services/8a7bda58-94e4-4914-813c-03581d81f5a5.webp?w=640&q=75");
+    }
+    .six {
+      background-image: url("https://daclinic.kg/uploads/services/bb204398-3827-4577-81f3-b5dd17e9c9e6.webp?w=640&q=75");
+    }
+  }
+
+  .btn_nav {
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 140px;
+      height: 50px;
+      border: none;
+      background-color: var(
+        --nav-button-bg,
+        var(--primary, oklch(56.418% 0.16999 263.223))
+      );
+      color: var(--button-text, #fafafa);
+      font-family: inter;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      font-size: 14px;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      &:active {
+        transform: scale(0.95);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .content_nav {
+    margin-top: 100px;
+    gap: 40px;
+  }
+  .content_nav .content div {
+    width: 360px;
+    height: 200px;
+  }
+  .content_nav .nav_text h2 {
+    font-size: 24px;
+  }
+  .content_nav .btn_nav button {
+    width: 130px;
+    height: 48px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .content_nav {
+    margin-top: 80px;
+    gap: 35px;
+  }
+  .content_nav .nav_text h2 {
+    font-size: 22px;
+  }
+  .content_nav .content {
+    gap: 15px;
+  }
+  .content_nav .content div {
+    width: 320px;
+    height: 190px;
+  }
+  .content_nav .content .cont {
+    padding: 20px;
+  }
+  .content_nav .content .cont h3 {
+    font-size: 17px;
+  }
+  .content_nav .content .cont p {
+    font-size: 13px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .content_nav {
+    margin-top: 60px;
+    gap: 30px;
+  }
+  .content_nav .nav_text h2 {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  .content_nav .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content_nav .content div {
+    width: 90%;
+    max-width: 400px;
+    height: 200px;
+  }
+  .content_nav .content .cont {
+    padding: 18px;
+  }
+  .content_nav .content .cont h3 {
+    font-size: 16px;
+  }
+  .content_nav .content .cont p {
+    font-size: 12px;
+  }
+  .content_nav .btn_nav button {
+    width: 120px;
+    height: 46px;
+    font-size: 13px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .content_nav {
+    margin-top: 40px;
+    gap: 25px;
+  }
+  .content_nav .nav_text h2 {
+    font-size: 18px;
+  }
+  .content_nav .content div {
+    height: 180px;
+  }
+  .content_nav .content .cont {
+    padding: 15px;
+  }
+  .content_nav .content .cont h3 {
+    font-size: 15px;
+  }
+  .content_nav .content .cont p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .content_nav .btn_nav button {
+    width: 110px;
+    height: 42px;
+    font-size: 12px;
+    padding: 8px;
+  }
+}

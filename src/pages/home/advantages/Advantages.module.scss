@@ -1,0 +1,215 @@
+.advantages {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary, #2d3e50);
+
+    .highlight {
+      background: linear-gradient(
+        135deg,
+        var(--primary, #2b6c9e),
+        var(--accent, #6ac5b1)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary, #6b7a8a);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  padding: 30px;
+  background: var(--card-bg, #f9fbfd);
+  border-radius: 24px;
+  text-align: center;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  border: 1px solid var(--border-color, #e9eef2);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow, 0 10px 30px rgba(0, 0, 0, 0.1));
+  }
+
+  .iconWrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary, #2d3e50);
+  }
+
+  p {
+    color: var(--text-secondary, #6b7a8a);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+:global(.dark-theme) {
+  .card {
+    background: var(--card-bg, #1e2532);
+    border-color: #2d3748;
+  }
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .advantages {
+    padding: 70px 0;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  .card {
+    padding: 25px;
+  }
+  .card .iconWrapper {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .advantages {
+    padding: 60px 0;
+  }
+  .header {
+    margin-bottom: 50px;
+  }
+  .header .title {
+    font-size: 2.2rem;
+  }
+  .header .subtitle {
+    font-size: 1.1rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    padding: 25px 20px;
+  }
+  .card .iconWrapper {
+    width: 65px;
+    height: 65px;
+    font-size: 1.7rem;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .advantages {
+    padding: 50px 0;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .header .title {
+    font-size: 2rem;
+  }
+  .header .subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .card {
+    padding: 30px;
+  }
+  .card .iconWrapper {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .advantages {
+    padding: 40px 0;
+  }
+  .header {
+    margin-bottom: 30px;
+  }
+  .header .title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+  }
+  .grid {
+    max-width: 100%;
+    gap: 15px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .card .iconWrapper {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}

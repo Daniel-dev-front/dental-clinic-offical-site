@@ -1,0 +1,247 @@
+:root,
+.light-theme {
+  --text-muted: #00000090;
+  --bg-color: #ffffff;
+  --text-color: #213547;
+  --header-gradient: linear-gradient(90deg, #2b7de8 0%, #b565e7 100%);
+  --header-text: #ffffff;
+  --card-bg: #f9f9f9;
+  --card-border: #e0e0e0;
+  --primary: #2b7de8;
+  --primary-hover: #1a5bbf;
+  --button-bg: #f0f0f0;
+  --button-text: #fff;
+  --admin-bg: #fafafa;
+  --admin-text: #333;
+  --input-bg: rgba(255, 255, 255, 0.15);
+  --input-border: rgba(255, 255, 255, 0.2);
+  --input-placeholder: #00000070;
+  --link-hover: oklch(50.844% 0.19737 262.708);
+  --danger: #dc3545;
+  --nav-heading: #00296d;
+  --overlay-dark: rgba(2, 81, 199, 0.9);
+  --overlay-light: rgba(153, 208, 238, 0.9);
+  --nav-button-bg: var(--primary); // оставляем как есть
+  --card-dark-bg: #0251c7; // цвет под тёмный оверлей (rgba(2,81,199,0.9) без прозрачности)
+  --card-light-bg: #99d0ee;
+  --primary: #1976d2;
+  --text-primary: #2c3e50;
+  --text-secondary: #546e7a;
+  --text-light: #90a4ae;
+  --border-color: #eceff1;
+  --card-bg: #ffffff;
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+  --image-side-bg: #e3f2fd;
+  --placeholder-text: rgba(0, 0, 0, 0.6);
+  --placeholder-note: rgba(0, 0, 0, 0.4);
+  --fact-number: rgba(0, 0, 0, 0.05);
+  --button-bg: #ffffff;
+  --button-hover-text: #ffffff;
+  --admin-bg: #fafafa;
+  --link-hover: oklch(50.844% 0.19737 262.708);
+  --danger: #dc3545;
+  --content-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --content-border: #e0e0e0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #7c3aed;
+  --card-bg: #ffffff;
+  --border-color: #e9eef2;
+  --card-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  --image-placeholder-bg: #f1f5f9;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #7c3aed;
+  --border-color: #e2e8f0;
+  --input-bg: #ffffff;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --admin-text: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --danger: #ef4444;
+  --card-shadow-hover: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+  --about-bg: #ffffff;
+  --about-hero-bg: linear-gradient(135deg, #f5f9ff 0%, #e8f0f9 100%);
+  --about-section-bg: #ffffff;
+  --about-alt-bg: #f9fbfd;
+  --about-card-bg: #f9fbfd;
+  --about-border: transparent;
+  --about-text-primary: #2d3e50;
+  --about-text-secondary: #6b7a8a;
+  --about-badge-bg: rgba(43, 108, 158, 0.1);
+  --about-photo-bg: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  --about-highlight-bg: rgba(106, 197, 177, 0.2);
+  --about-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --about-cta-hover: #f0f0f0;
+  --border-radius: 16px;
+  --primary: #2b6c9e;
+  --primary-hover: #1f4f7a;
+  --primary-dark: #1f4f7a;
+  --accent: #6ac5b1;
+  --map-bg: #ffffff;
+  --card-bg-rgb: 255, 255, 255;
+  // CTA секция
+  --cta-bg: linear-gradient(
+    135deg,
+    var(--primary, #2b6c9e) 0%,
+    var(--primary-dark, #1f4f7a) 100%
+  );
+  --cta-title: #ffffff;
+  --cta-text: #ffffff;
+  --cta-phone: #ffffff;
+  --cta-button-bg: #ffffff;
+  --cta-button-border: #e2e8f0;
+  --cta-button-hover: #f8fafc;
+  --cta-button-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --cta-button-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+  // Диалог
+  --dialog-bg: #ffffff;
+  --dialog-text: #1e293b;
+  --dialog-border: #e9eef2;
+  --dialog-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --dialog-button-border: #e2e8f0;
+  --dialog-button-text: #1e293b;
+  --dialog-button-hover: #f1f5f9;
+
+  // Форма
+  --form-label: #1e293b;
+  --form-input-bg: #ffffff;
+  --form-input-text: #1e293b;
+  --form-input-border: #e2e8f0;
+  --form-input-placeholder: #94a3b8;
+  --footer-bg: linear-gradient(135deg, #2b6c9e 0%, #1f4f7a 100%);
+  --footer-text: #ffffff;
+  --footer-heading: #ffffff;
+  --footer-text-secondary: rgba(255, 255, 255, 0.8);
+}
+
+.dark-theme {
+  --all-btn: "#fff";
+  --bg-color: #1e1e1e; // стало: тёмно-серый, но не чёрный
+  --text-color: rgba(255, 255, 255, 0.87);
+  --header-gradient: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+  --header-text: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-border: #333;
+  --primary: #4d7cff;
+  --primary-hover: #3a5fd9;
+  --button-bg: #333;
+  --button-text: #fff;
+  --admin-bg: #1e1e1e;
+  --admin-text: #e0e0e0;
+  --input-bg: rgba(0, 0, 0, 0.5);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-placeholder: #b0b0b0;
+  --link-hover: #8a9cff;
+  --danger: #ff6b6b;
+  --text-muted: #ffffffb0;
+  --overlay-dark: rgba(20, 40, 70, 0.95);
+  --overlay-light: rgba(40, 60, 90, 0.9);
+  --nav-heading: #aaccff;
+  --nav-button-bg: #2a3f7a; // нужный вам тёмный оттенок
+  --card-dark-bg: #0a1a3a; // тёмно-синий под тёмный оверлей
+  --card-light-bg: #1a2a3a;
+  --primary: #4d7cff; // яркий акцент
+  --text-primary: #e0e0e0; // основной текст (светлый)
+  --text-secondary: #b0b0b0; // второстепенный текст
+  --text-light: #808080; // самый светлый (но тёмный)
+  --border-color: #404040; // цвет границ
+  --card-bg: #1e1e1e; // фон карточки
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.7);
+  --image-side-bg: #2a2a2a; // фон левой части (был светлый)
+  --placeholder-text: rgba(255, 255, 255, 0.6);
+  --placeholder-note: rgba(255, 255, 255, 0.4);
+  --fact-number: rgba(255, 255, 255, 0.05);
+  --button-bg: #333333;
+  --button-hover-text: #ffffff;
+  --admin-bg: #1e1e1e; // или #2d2d2d, как вы выбрали
+  --link-hover: #8a9cff; // яркий оттенок для ссылок
+  --danger: #ff6b6b; // мягкий красный
+  --content-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --content-border: #444;
+  --accent: #b565e7; // для градиентов
+  --image-placeholder-bg: #f5f5f5;
+  --primary: #4d7cff;
+  --primary-hover: #3a5fd9;
+  --accent: #c45bff;
+  --text-secondary: #9aa6b2;
+  --card-bg: #1e2532;
+  --border-color: #2d3748;
+  --card-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
+  --image-placeholder-bg: #2a2f3a;
+  --primary: #4d7cff;
+  --primary-hover: #3a5fd9;
+  --accent: #c45bff;
+  --text-secondary: #9aa6b2;
+  --card-bg: #1e2532;
+  --border-color: #2d3748;
+  --input-bg: #1e2532;
+  --card-bg: #1e2532;
+  --text-secondary: #9aa6b2;
+  --border-color: #2d3748;
+  --danger: #ff6b6b;
+  --inp-text: #ffffff;
+  --about-bg: #1a1f2b;
+  --about-hero-bg: linear-gradient(135deg, #1e2433 0%, #151a24 100%);
+  --about-section-bg: #1a1f2b;
+  --about-alt-bg: #232835;
+  --about-card-bg: #232835;
+  --about-border: #2d3748;
+  --about-text-primary: #e9edf0;
+  --about-text-secondary: #a0aec0;
+  --about-badge-bg: rgba(66, 153, 225, 0.15);
+  --about-photo-bg: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  --about-highlight-bg: rgba(106, 197, 177, 0.1);
+  --about-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --about-cta-hover: #2d3748;
+  --border-radius: 16px;
+  --map-bg: #1a1f2b;
+  --card-bg-rgb: 30, 37, 50;
+
+  // Primary colors for dark theme
+  --primary: #4299e1;
+  --primary-hover: #3182ce;
+  --primary-dark: #2b6c9e;
+  --accent: #6ac5b1;
+
+  // CTA секция
+  --cta-bg: linear-gradient(135deg, #1a1f2b 0%, #232835 100%);
+  --cta-title: #e9edf0;
+  --cta-text: #9aa6b2;
+  --cta-phone: #9aa6b2;
+  --cta-button-bg: #2d3748;
+  --cta-button-border: #404b5f;
+  --cta-button-hover: #374151;
+  --cta-button-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --cta-button-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+  // Диалог
+  --dialog-bg: #1e2532;
+  --dialog-text: #e9edf0;
+  --dialog-border: #2d3748;
+  --dialog-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  --dialog-button-border: #404b5f;
+  --dialog-button-text: #e9edf0;
+  --dialog-button-hover: #2d3748;
+
+  // Форма
+  --form-label: #e9edf0;
+  --form-input-bg: #232835;
+  --form-input-text: #e9edf0;
+  --form-input-border: #404b5f;
+  --form-input-placeholder: #6b7a8a;
+
+  // Специальные для date/time инпутов
+  --date-color-scheme: dark;
+  --calendar-icon-filter: invert(1);
+  --footer-bg: linear-gradient(135deg, #0f1a2a 0%, #0a121f 100%);
+  --footer-text: #e9edf0;
+  --footer-heading: #ffffff;
+  --footer-text-secondary: rgba(255, 255, 255, 0.6);
+}

@@ -1,0 +1,353 @@
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    background: linear-gradient(
+      135deg,
+      var(--primary, #2563eb),
+      var(--accent, #7c3aed)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary, #64748b);
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.clinicsList {
+  width: 35%;
+  background: var(--card-bg, #ffffff);
+  border-radius: 24px;
+  border: 1px solid var(--border-color, #e9eef2);
+  padding: 24px;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--admin-text, #1e293b);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color, #e9eef2);
+  }
+}
+
+.list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--border-color, #e9eef2);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary, #2563eb);
+    border-radius: 10px;
+  }
+}
+
+.clinicCard {
+  display: flex;
+  gap: 15px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: var(--input-bg, #f8fafc);
+  border-radius: 16px;
+  border: 1px solid var(--border-color, #e9eef2);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateX(5px);
+    border-color: var(--primary, #2563eb);
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+  }
+
+  &.selected {
+    border: 2px solid var(--primary, #2563eb);
+    background: color-mix(
+      in srgb,
+      var(--primary, #2563eb) 5%,
+      var(--input-bg, #f8fafc)
+    );
+  }
+}
+
+.clinicNumber {
+  width: 30px;
+  height: 30px;
+  background: var(--primary, #2563eb);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.clinicInfo {
+  flex: 1;
+
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--admin-text, #1e293b);
+  }
+
+  .address {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary, #64748b);
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+
+    span {
+      margin-left: 4px;
+      color: var(--text-secondary, #64748b);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+
+  .phone,
+  .workTime {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary, #64748b);
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+
+    svg {
+      color: var(--primary, #2563eb);
+    }
+  }
+
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+
+    .serviceTag {
+      padding: 4px 10px;
+      background: color-mix(in srgb, var(--primary, #2563eb) 10%, transparent);
+      color: var(--primary, #2563eb);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}
+.mapContainer {
+  width: 65%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--border-color, #e9eef2);
+  background: var(--map-bg, #ffffff); // Добавляем фон
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+
+  :global(.leaflet-control-zoom a) {
+    background: var(--card-bg, #ffffff) !important;
+    color: var(--admin-text, #1e293b) !important;
+    border-color: var(--border-color, #e9eef2) !important;
+  }
+
+  :global(.leaflet-control-attribution) {
+    background: rgba(var(--card-bg-rgb), 0.8) !important;
+    color: var(--text-secondary, #64748b) !important;
+    backdrop-filter: blur(4px);
+  }
+}
+
+:global(.dark-theme) {
+  .mapContainer {
+    --map-bg: #1a1f2b;
+    border-color: #2d3748;
+  }
+
+  :global(.leaflet-popup-content-wrapper) {
+    background: var(--card-bg, #1e2532) !important;
+    color: var(--admin-text, #e9edf0) !important;
+    border: 1px solid var(--border-color, #2d3748) !important;
+  }
+
+  :global(.leaflet-popup-tip) {
+    background: var(--card-bg, #1e2532) !important;
+  }
+
+  :global(.leaflet-popup-content) {
+    color: var(--admin-text, #e9edf0) !important;
+  }
+
+  // Стили для кнопок в попапе
+  :global(.leaflet-popup-content button) {
+    background: var(--primary, #4d7cff) !important;
+    color: white !important;
+
+    &:hover {
+      background: var(--primary-hover, #3a5fd9) !important;
+    }
+  }
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .content {
+    gap: 25px;
+  }
+  .clinicsList {
+    width: 40%;
+    padding: 20px;
+  }
+  .mapContainer {
+    width: 60%;
+  }
+  .clinicCard {
+    padding: 14px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .header .title {
+    font-size: 2.2rem;
+  }
+  .header .subtitle {
+    font-size: 1.1rem;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .clinicsList {
+    width: 100%;
+    max-height: 400px;
+  }
+  .mapContainer {
+    width: 100%;
+    height: 450px;
+  }
+  .map {
+    height: 450px;
+  }
+  .clinicInfo h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 30px;
+  }
+  .header .title {
+    font-size: 2rem;
+  }
+  .clinicsList {
+    padding: 16px;
+  }
+  .clinicsList h3 {
+    font-size: 1.3rem;
+  }
+  .clinicCard {
+    padding: 12px;
+    gap: 10px;
+  }
+  .clinicNumber {
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+  .clinicInfo .address,
+  .clinicInfo .phone,
+  .clinicInfo .workTime {
+    font-size: 0.85rem;
+  }
+  .clinicInfo .services .serviceTag {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+  .mapContainer {
+    height: 400px;
+  }
+  .map {
+    height: 400px;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .header .title {
+    font-size: 1.6rem;
+  }
+  .header .subtitle {
+    font-size: 1rem;
+  }
+  .clinicsList {
+    padding: 12px;
+  }
+  .clinicsList h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .list {
+    max-height: 350px;
+  }
+  .clinicCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .clinicNumber {
+    align-self: flex-start;
+  }
+  .clinicInfo {
+    width: 100%;
+  }
+  .clinicInfo h4 {
+    font-size: 1rem;
+  }
+  .clinicInfo .rating span {
+    font-size: 0.85rem;
+  }
+  .mapContainer {
+    height: 350px;
+  }
+  .map {
+    height: 350px;
+  }
+}

@@ -1,0 +1,243 @@
+.content {
+  height: 610px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+
+  h1 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 56px;
+    font-family: inter;
+  }
+  .text {
+    display: flex;
+    h2 {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: inter;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #fff;
+    color: oklch(54.6% 0.245 262.881);
+  }
+  .dop_info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    display: flex;
+    .info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      gap: 20px;
+      border-radius: 40px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      animation: bounce 2s infinite ease-in-out;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+      p {
+        font-family: inter;
+      }
+      .like {
+        background-color: #4fd1c5;
+      }
+      .new {
+        background-color: rgb(4, 4, 174);
+      }
+      .check {
+        background-color: darkorchid;
+      }
+    }
+    .info:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .info:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0); /* Начальное и конечное положение */
+  }
+  50% {
+    transform: translateY(-8px); /* Максимальная точка "прыжка" вверх */
+  }
+}
+.content {
+  h1,
+  .text h2 {
+    color: var(--header-text); // текст на градиентном фоне
+  }
+  button {
+    background-color: var(--button-bg);
+    color: var(--primary);
+  }
+  .dop_info .info {
+    background-color: var(--input-bg);
+    p {
+      color: var(--text-color);
+      font-weight: 500;
+      margin-right: 5px;
+    }
+  }
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .content h1 {
+    font-size: 48px;
+  }
+  .content .text h2 {
+    font-size: 24px;
+  }
+  .content {
+    gap: 60px;
+  }
+  .content .dop_info {
+    gap: 30px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .content {
+    height: 550px;
+    gap: 50px;
+  }
+  .content h1 {
+    font-size: 40px;
+  }
+  .content .text h2 {
+    font-size: 22px;
+  }
+  .content button {
+    width: 200px;
+    height: 48px;
+    font-size: 15px;
+  }
+  .content .dop_info {
+    gap: 20px;
+  }
+  .content .dop_info .info {
+    height: 55px;
+    gap: 15px;
+    padding: 8px;
+  }
+  .content .dop_info .info span {
+    width: 35px;
+    height: 35px;
+  }
+  .content .dop_info .info p {
+    font-size: 14px;
+  }
+}
+
+/* Маленький планшет (до 768px) */
+@media (max-width: 768px) {
+  .content {
+    height: auto;
+    min-height: 500px;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  .content h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+  .content .text h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .content button {
+    width: 180px;
+    height: 44px;
+    font-size: 14px;
+  }
+  .content .dop_info {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+  }
+  .content .dop_info .info {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .content {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+  .content h1 {
+    font-size: 26px;
+  }
+  .content .text h2 {
+    font-size: 16px;
+  }
+  .content button {
+    width: 160px;
+    height: 40px;
+    font-size: 13px;
+
+    border-radius: 30px;
+  }
+  .content .dop_info {
+    max-width: 250px;
+  }
+  .content .dop_info .info {
+    height: 50px;
+    gap: 10px;
+    padding: 6px;
+  }
+  .content .dop_info .info span {
+    width: 30px;
+    height: 30px;
+  }
+  .content .dop_info .info p {
+    font-size: 12px;
+    margin-right: 3px;
+  }
+  .content .dop_info .info svg {
+    width: 14px;
+    height: 14px;
+  }
+  .content .dop_info .info:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .content .dop_info .info:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+}

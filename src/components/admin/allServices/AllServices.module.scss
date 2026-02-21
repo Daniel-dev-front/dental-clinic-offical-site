@@ -1,0 +1,369 @@
+.allServices {
+  padding: 24px;
+  color: var(--admin-text, #1e293b);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(
+      135deg,
+      var(--primary, #2563eb),
+      var(--accent, #7c3aed)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    svg {
+      margin-top: -8px;
+      vertical-align: middle;
+    }
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 28px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 8px 16px
+      color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+
+    &:hover {
+      background: var(--primary-hover, #1d4ed8);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px
+        color-mix(in srgb, var(--primary, #2563eb) 40%, transparent);
+    }
+  }
+}
+
+.searchBar {
+  position: relative;
+  margin-bottom: 32px;
+
+  .searchIcon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary, #94a3b8);
+    font-size: 1.2rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 40px;
+    background: var(--input-bg, #ffffff);
+    color: var(--admin-text, #1e293b);
+    font-size: 1rem;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary, #2563eb);
+      box-shadow: 0 0 0 3px
+        color-mix(in srgb, var(--primary, #2563eb) 20%, transparent);
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg, #ffffff);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #edf2f7);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover, 0 12px 24px -8px rgba(0, 0, 0, 0.15));
+  }
+
+  .categoryBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .image {
+    height: 160px;
+    background: var(--image-placeholder-bg, #f1f5f9);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    padding: 20px;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--admin-text, #1e293b);
+      padding-right: 40px;
+    }
+
+    .details {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+
+      .detail {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--primary, #2563eb);
+        font-weight: 500;
+        font-size: 0.95rem;
+
+        svg {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .doctor {
+      color: var(--text-secondary, #64748b);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .description {
+      color: var(--text-secondary, #64748b);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .actions {
+    display: flex;
+    border-top: 1px solid var(--border-color, #edf2f7);
+
+    button {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 1rem;
+
+      &.editBtn {
+        color: var(--primary, #2563eb);
+        border-right: 1px solid var(--border-color, #edf2f7);
+
+        &:hover {
+          background: color-mix(
+            in srgb,
+            var(--primary, #2563eb) 10%,
+            transparent
+          );
+        }
+      }
+
+      &.deleteBtn {
+        color: var(--danger, #ef4444);
+
+        &:hover {
+          background: color-mix(
+            in srgb,
+            var(--danger, #ef4444) 10%,
+            transparent
+          );
+        }
+      }
+    }
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg, #ffffff);
+  border-radius: 28px;
+  border: 1px solid var(--border-color, #e9eef2);
+  color: var(--text-secondary, #64748b);
+}
+
+.dialog {
+  :global {
+    .MuiPaper-root {
+      background: var(--card-bg, #ffffff);
+      color: var(--admin-text, #1e293b);
+      border-radius: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .allServices {
+    padding: 20px;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .header h2 {
+    font-size: 1.8rem;
+  }
+  .header .addBtn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+  .searchBar input {
+    padding: 12px 16px 12px 44px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .card .content h3 {
+    font-size: 1.1rem;
+  }
+  .card .content .details .detail {
+    font-size: 0.9rem;
+  }
+}
+
+/* У тебя уже есть @media 768px, он хорош. */
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .allServices {
+    padding: 12px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .header h2 svg {
+    display: block;
+    margin: 0 auto 4px;
+  }
+  .header .addBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  .searchBar {
+    margin-bottom: 24px;
+  }
+  .searchBar input {
+    padding: 10px 14px 10px 40px;
+    font-size: 0.9rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card .categoryBadge {
+    top: 8px;
+    right: 8px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+  .card .image {
+    height: 140px;
+  }
+  .card .content {
+    padding: 16px;
+  }
+  .card .content h3 {
+    font-size: 1rem;
+    padding-right: 30px;
+  }
+  .card .content .details {
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .card .content .details .detail {
+    font-size: 0.85rem;
+  }
+  .card .content .doctor {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  .card .content .description {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
+  }
+  .card .actions button {
+    padding: 10px;
+    font-size: 0.9rem;
+    gap: 4px;
+  }
+  .empty {
+    padding: 50px 16px;
+  }
+  .empty h3 {
+    font-size: 1.3rem;
+  }
+}

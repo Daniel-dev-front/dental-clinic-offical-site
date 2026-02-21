@@ -1,0 +1,306 @@
+.editService {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--admin-text, #1e293b);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    background: linear-gradient(
+      135deg,
+      var(--primary, #2563eb),
+      var(--accent, #7c3aed)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.form {
+  background: var(--card-bg, #ffffff);
+  border-radius: 28px;
+  padding: 32px 36px;
+  box-shadow: var(--card-shadow, 0 10px 25px -5px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, #e9eef2);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--admin-text, #1e293b);
+    font-size: 0.95rem;
+
+    svg {
+      color: var(--primary, #2563eb);
+      font-size: 1.1rem;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 14px 18px;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: 24px;
+    background: var(--input-bg, #ffffff);
+    color: var(--admin-text, #1e293b);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary, #2563eb);
+      box-shadow: 0 0 0 4px
+        color-mix(in srgb, var(--primary, #2563eb) 15%, transparent);
+    }
+
+    &::placeholder {
+      color: var(--text-secondary, #94a3b8);
+    }
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+  }
+
+  textarea {
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.6;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.preview {
+  margin-top: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 200px;
+  border: 2px solid var(--border-color, #e2e8f0);
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: flex-end;
+
+  button {
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 180px;
+
+    svg {
+      font-size: 1.2rem;
+    }
+
+    &.cancelBtn {
+      background: transparent;
+      border: 2px solid var(--border-color, #e2e8f0);
+      color: var(--admin-text, #1e293b);
+
+      &:hover {
+        background: var(--border-color, #e2e8f0);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+
+    &.submitBtn {
+      background: var(--primary, #2563eb);
+      border: none;
+      color: white;
+      box-shadow: 0 8px 20px
+        color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+
+      &:hover {
+        background: var(--primary-hover, #1d4ed8);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px
+          color-mix(in srgb, var(--primary, #2563eb) 40%, transparent);
+      }
+
+      &:active {
+        transform: translateY(1px);
+        box-shadow: 0 4px 12px
+          color-mix(in srgb, var(--primary, #2563eb) 30%, transparent);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-secondary, #64748b);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .editService {
+    padding: 16px;
+  }
+
+  .form {
+    padding: 24px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+
+    button {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Ноутбук и меньше (до 1200px) */
+@media (max-width: 1200px) {
+  .editService {
+    padding: 20px;
+    max-width: 700px;
+  }
+  .form {
+    padding: 28px 30px;
+  }
+}
+
+/* Планшет (до 992px) */
+@media (max-width: 992px) {
+  .editService h2 {
+    font-size: 1.8rem;
+  }
+  .form {
+    padding: 24px;
+  }
+}
+
+/* У тебя уже есть отличный @media 768px, оставляем */
+
+/* Телефон (до 480px) */
+@media (max-width: 480px) {
+  .editService {
+    padding: 12px;
+  }
+  .editService h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  .form {
+    padding: 16px;
+    gap: 16px;
+    border-radius: 24px;
+  }
+  .formGroup label {
+    font-size: 0.9rem;
+  }
+  .formGroup label svg {
+    font-size: 1rem;
+  }
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-width: 1px;
+    border-radius: 20px;
+  }
+  .preview {
+    max-width: 120px;
+  }
+  .actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .actions button {
+    width: 100%;
+    min-width: auto;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  .actions button svg {
+    font-size: 1rem;
+  }
+  .loading {
+    padding: 40px 16px;
+    font-size: 1rem;
+  }
+}
