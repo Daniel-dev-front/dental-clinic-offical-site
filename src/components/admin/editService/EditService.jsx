@@ -11,7 +11,7 @@ const EditService = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
-  const { services, readServices, updateService } = useProduct();
+  const { service: serviceList, readServices, updateService } = useProduct();
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -44,22 +44,24 @@ const EditService = () => {
   }, []);
 
   useEffect(() => {
-    if (!loading && services.length > 0 && id) {
-      const service = services.find((s) => s._id === id || s.id === Number(id));
-      if (service) {
+    if (serviceList && serviceList.length > 0 && id) {
+      const found = serviceList.find(
+        (s) => s._id === id || s.id === Number(id),
+      );
+      if (found) {
         setFormData({
-          name: service.name || "",
-          description: service.description || "",
-          price: service.price?.toString() || "",
-          duration: service.duration || "",
-          category: service.category || "Другое",
-          doctorName: service.doctorName || "",
-          img: service.img || "",
+          name: found.name || "",
+          description: found.description || "",
+          price: found.price?.toString() || "",
+          duration: found.duration || "",
+          category: found.category || "Другое",
+          doctorName: found.doctorName || "",
+          img: found.img || "",
         });
       }
       setLoading(false);
     }
-  }, [loading, services, id]);
+  }, [serviceList, id]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -68,10 +70,12 @@ const EditService = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const service = services.find((s) => s._id === id || s.id === Number(id));
-      if (!service) throw new Error("Service not found");
+      const found = serviceList?.find(
+        (s) => s._id === id || s.id === Number(id),
+      );
+      if (!found) throw new Error("Service not found");
 
-      await updateService(service._id, {
+      await updateService(found._id || found.id, {
         ...formData,
         price: formData.price ? Number(formData.price) : null,
       });
@@ -97,7 +101,7 @@ const EditService = () => {
   return (
     <div className={scss.editService}>
       <h2>
-        {t("common.edit")} {t("admin.services.title")}
+        {t("common.edit")} {t("admin.services.service")}
       </h2>
 
       <form onSubmit={handleSubmit} className={scss.form}>

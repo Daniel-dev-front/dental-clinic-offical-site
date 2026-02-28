@@ -23,7 +23,7 @@ import scss from "./AllServices.module.scss";
 
 const AllServices = () => {
   const { t } = useTranslation();
-  const { services, readServices, deleteService } = useProduct();
+  const { service, readServices, deleteService } = useProduct();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [deleteConfirm, setDeleteConfirm] = useState(null);
@@ -37,11 +37,11 @@ const AllServices = () => {
     readServices();
   }, []);
 
-  const filteredServices = services.filter(
-    (service) =>
-      service.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      service.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      service.doctorName?.toLowerCase().includes(searchTerm.toLowerCase()),
+  const filteredServices = service.filter(
+    (services) =>
+      services.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      services.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      services.doctorName?.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const getCategoryColor = (category) => {
