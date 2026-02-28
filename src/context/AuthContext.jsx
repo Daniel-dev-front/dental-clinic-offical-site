@@ -7,7 +7,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from "firebase/auth";
-import { auth } from "../Firebase";
+import { auth } from "../firebase";
 // import { useAuth } from "./AuthContext";
 
 const googleProvider = new GoogleAuthProvider();

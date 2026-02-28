@@ -42,7 +42,6 @@ const ClientLayout = () => {
     <div className="container">
       <div className={scss.clientPanel}>
         <div className={scss.content}>
-          {/* Десктопное меню */}
           <div className={scss.desktopSidebar}>
             <ul>
               <NavLink
@@ -82,14 +81,10 @@ const ClientLayout = () => {
             </ul>
           </div>
 
-          {/* Мобильное бургер-меню */}
           <div className={`${scss.mobileSidebar} ${menuOpen ? scss.open : ""}`}>
             <div className={scss.mobileHeader}>
               <h3>{t("client.dashboard.title")}</h3>
-              <button
-                className={scss.closeBtn}
-                onClick={() => setMenuOpen(false)}
-              >
+              <button className={scss.closeBtn} onClick={handleNavClick}>
                 <FaTimes />
               </button>
             </div>
@@ -136,7 +131,6 @@ const ClientLayout = () => {
             </ul>
           </div>
 
-          {/* Затемнение фона */}
           {menuOpen && (
             <div className={scss.overlay} onClick={() => setMenuOpen(false)} />
           )}
