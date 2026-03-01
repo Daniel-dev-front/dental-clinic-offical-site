@@ -23,7 +23,7 @@ const Store = () => {
   });
 
   const categories = [
-    t("store.all"),
+    "all",
     ...new Set(product.map((p) => p.category).filter(Boolean)),
   ];
 
@@ -50,9 +50,7 @@ const Store = () => {
       item.description?.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesCategory =
-      selectedCategory === t("store.all") || selectedCategory === "all"
-        ? true
-        : item.category === selectedCategory;
+      selectedCategory === "all" ? true : item.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -97,22 +95,20 @@ const Store = () => {
               key={category}
               className={`${scss.categoryBtn} ${
                 selectedCategory === category ||
-                (selectedCategory === "all" && category === t("store.all"))
+                (selectedCategory === "all" && category === "all")
                   ? scss.active
                   : ""
               }`}
               onClick={() =>
-                setSelectedCategory(
-                  category === t("store.all") ? "all" : category,
-                )
+                setSelectedCategory(category === "all" ? "all" : category)
               }
               style={
-                category !== t("store.all") && category !== "all"
+                category !== "all"
                   ? { backgroundColor: getCategoryColor(category) + "20" }
                   : {}
               }
             >
-              {category}
+              {category === "all" ? t("store.all") : t(category)}
             </button>
           ))}
         </div>
@@ -130,7 +126,7 @@ const Store = () => {
                     className={scss.categoryBadge}
                     style={{ backgroundColor: getCategoryColor(item.category) }}
                   >
-                    {item.category}
+                    {t(item.category)}
                   </div>
                 )}
 

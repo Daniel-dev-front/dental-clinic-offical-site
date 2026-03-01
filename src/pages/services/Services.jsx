@@ -17,7 +17,7 @@ const Services = () => {
   });
 
   const categories = [
-    t("services.all"),
+    "all",
     ...new Set(service.map((s) => s.category).filter(Boolean)),
   ];
 
@@ -46,9 +46,7 @@ const Services = () => {
       service.doctorName?.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesCategory =
-      selectedCategory === t("services.all") || selectedCategory === "all"
-        ? true
-        : service.category === selectedCategory;
+      selectedCategory === "all" ? true : service.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });

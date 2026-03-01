@@ -5,6 +5,7 @@ import Store from "../pages/store/Store";
 import Login from "../pages/auth/login/Login";
 import SignUp from "../pages/auth/signUp/SignUp";
 import Admin from "../components/admin/panel/Admin";
+import ProtectedRoute from "./ProtectedRoute";
 import AddMaterial from "../components/admin/addMaterial/AddMaterial";
 import AllServices from "../components/admin/allServices/AllServices";
 import DashBoard from "../components/admin/dashboard/DashBoard";
@@ -14,7 +15,7 @@ import AddServices from "../components/admin/addServices/AddServices";
 import ProductDetail from "../components/admin/productDetail/ProductDetail";
 import ClientLayout from "../components/client/clientLayout/ClientLayout";
 import ClientDashboard from "../components/client/ClientDashboard/ClientDashboard";
-import Wishlist from "../components/client/Wishlist/Wishlist.jsx"
+import Wishlist from "../components/client/Wishlist/Wishlist.jsx";
 import Cart from "../components/client/cart/Cart";
 import Appointments from "../components/client/appointments/Appointments";
 import ProfileSettings from "../components/client/profileSettings/ProfileSettings";
@@ -37,7 +38,11 @@ const MainRoutes = () => {
 
     {
       path: "/admin",
-      element: <Admin />,
+      element: (
+        <ProtectedRoute roles={["admin"]}>
+          <Admin />
+        </ProtectedRoute>
+      ),
       children: [
         { index: true, element: <DashBoard /> },
         { path: "addMaterial", element: <AddMaterial /> },
@@ -57,14 +62,18 @@ const MainRoutes = () => {
     },
     {
       path: "/profile",
-      element: <ClientLayout />,
+      element: (
+        <ProtectedRoute>
+          <ClientLayout />
+        </ProtectedRoute>
+      ),
       children: [
         { index: true, element: <ClientDashboard /> },
         { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
         { path: "appointments", element: <Appointments /> },
         { path: "settings", element: <ProfileSettings /> },
-        { path: "checkout", element:<Checkout /> }
+        { path: "checkout", element: <Checkout /> },
       ],
     },
   ];

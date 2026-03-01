@@ -41,6 +41,20 @@ const ClientLayout = () => {
   return (
     <div className="container">
       <div className={scss.clientPanel}>
+        <div className={scss.header}>
+          <h2>{t("client.dashboard.title")}</h2>
+          <div className={scss.headerActions}>
+            <button
+              className={scss.burgerBtn}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              {menuOpen}
+            </button>
+          </div>
+        </div>
         <div className={scss.content}>
           <div className={scss.desktopSidebar}>
             <ul>
@@ -84,9 +98,6 @@ const ClientLayout = () => {
           <div className={`${scss.mobileSidebar} ${menuOpen ? scss.open : ""}`}>
             <div className={scss.mobileHeader}>
               <h3>{t("client.dashboard.title")}</h3>
-              <button className={scss.closeBtn} onClick={handleNavClick}>
-                <FaTimes />
-              </button>
             </div>
             <ul>
               <NavLink

@@ -90,107 +90,109 @@ const EditMaterial = () => {
   }
 
   return (
-    <div className={scss.editMaterial}>
-      <h2>
-        {t("common.edit")} {t("admin.products.title")}
-      </h2>
+    <section className="container">
+      <div className={scss.editMaterial}>
+        <h2>
+          {t("common.edit")} {t("admin.products.title")}
+        </h2>
 
-      <form onSubmit={handleSubmit}>
-        <div className={scss.formGroup}>
-          <label>{t("common.name")} *</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className={scss.formGroup}>
+            <label>{t("common.name")} *</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div className={scss.formGroup}>
-          <label>{t("common.price")} *</label>
-          <input
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-            required
-          />
-        </div>
+          <div className={scss.formGroup}>
+            <label>{t("common.price")} *</label>
+            <input
+              type="number"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <div className={scss.formGroup}>
-          <label>{t("common.category")}</label>
-          <select
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-          >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div className={scss.formGroup}>
+            <label>{t("common.category")}</label>
+            <select
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {t(cat)}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <div className={scss.formGroup}>
-          <label>{t("common.description")}</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            rows="3"
-          />
-        </div>
+          <div className={scss.formGroup}>
+            <label>{t("common.description")}</label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              rows="3"
+            />
+          </div>
 
-        <div className={scss.formGroup}>
-          <label>{t("common.image")}</label>
-          <input
-            type="url"
-            name="img"
-            value={formData.img}
-            onChange={handleChange}
-          />
-          {formData.img && (
-            <div className={scss.preview}>
-              <img src={formData.img} alt={t("common.preview")} />
-            </div>
-          )}
-        </div>
+          <div className={scss.formGroup}>
+            <label>{t("common.image")}</label>
+            <input
+              type="url"
+              name="img"
+              value={formData.img}
+              onChange={handleChange}
+            />
+            {formData.img && (
+              <div className={scss.preview}>
+                <img src={formData.img} alt={t("common.preview")} />
+              </div>
+            )}
+          </div>
 
-        <div className={scss.formGroup}>
-          <label>{t("client.cart.quantity")}</label>
-          <input
-            type="number"
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleChange}
-            min="1"
-          />
-        </div>
+          <div className={scss.formGroup}>
+            <label>{t("client.cart.quantity")}</label>
+            <input
+              type="number"
+              name="quantity"
+              value={formData.quantity}
+              onChange={handleChange}
+              min="1"
+            />
+          </div>
 
-        <div className={scss.actions}>
-          <button
-            type="button"
-            className={scss.cancelBtn}
-            onClick={() => navigate("/admin/allMaterials")}
-          >
-            {t("common.cancel")}
-          </button>
-          <button type="submit" className={scss.saveBtn}>
-            <FiSave /> {t("common.save")}
-          </button>
-        </div>
-      </form>
+          <div className={scss.actions}>
+            <button
+              type="button"
+              className={scss.cancelBtn}
+              onClick={() => navigate("/admin/allMaterials")}
+            >
+              {t("common.cancel")}
+            </button>
+            <button type="submit" className={scss.saveBtn}>
+              <FiSave /> {t("common.save")}
+            </button>
+          </div>
+        </form>
 
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={3000}
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-      >
-        <Alert severity={snackbar.severity}>{snackbar.message}</Alert>
-      </Snackbar>
-    </div>
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={3000}
+          onClose={() => setSnackbar({ ...snackbar, open: false })}
+        >
+          <Alert severity={snackbar.severity}>{snackbar.message}</Alert>
+        </Snackbar>
+      </div>
+    </section>
   );
 };
 

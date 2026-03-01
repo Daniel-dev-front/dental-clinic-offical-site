@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import scss from "./Admin.module.scss";
 import { useAuth } from "../../../context/AuthProvider";
-import { useTheme } from "../../../context/ThemeContext";
+
 import {
   FaMoon,
   FaSun,
@@ -17,13 +17,11 @@ import {
 import { FiHome, FiLogOut } from "react-icons/fi";
 
 const Admin = () => {
-  // ✅ Все хуки в самом начале, в одном и том же порядке
   const { t } = useTranslation();
   const { logout, isAdmin } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ✅ useEffect всегда после useState, не внутри условий
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -59,13 +57,15 @@ const Admin = () => {
               className={scss.burgerBtn}
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              {menuOpen ? <FaTimes /> : <FaBars />}
+              <span></span>
+              <span></span>
+              <span></span>
+              {menuOpen}
             </button>
           </div>
         </div>
 
         <div className={scss.content}>
-          {/* Десктопное меню */}
           <div className={scss.desktopSidebar}>
             <ul>
               <NavLink
@@ -133,16 +133,9 @@ const Admin = () => {
             <hr className={scss.divider} />
           </div>
 
-          {/* Мобильное бургер-меню */}
           <div className={`${scss.mobileSidebar} ${menuOpen ? scss.open : ""}`}>
             <div className={scss.mobileHeader}>
               <h3>{t("admin.dashboard.title")}</h3>
-              <button
-                className={scss.closeBtn}
-                onClick={() => setMenuOpen(false)}
-              >
-                <FaTimes />
-              </button>
             </div>
             <ul>
               <NavLink
@@ -216,7 +209,6 @@ const Admin = () => {
             </ul>
           </div>
 
-          {/* Затемнение фона */}
           {menuOpen && (
             <div className={scss.overlay} onClick={() => setMenuOpen(false)} />
           )}

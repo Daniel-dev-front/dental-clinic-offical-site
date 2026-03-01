@@ -58,6 +58,32 @@
         "dreamSmile": "Dream smile",
         "modern": "Modern"
       }
+    },
+    "navService": {
+      "card1": {
+        "title": "Consultation with a detailed treatment plan",
+        "text": "A thorough examination, accurate diagnosis and an individual action plan — no pressure and full understanding of what and why is needed."
+      },
+      "card2": {
+        "title": "Surgery and implantation",
+        "text": "We place implants using a navigation system and custom 3D templates — safe, precise and predictable."
+      },
+      "card3": {
+        "title": "Prosthetics",
+        "text": "We restore the aesthetics and function of teeth using modern prostheses — from single to full sets. Comfortable, reliable and natural."
+      },
+      "card4": {
+        "title": "Artistic restoration",
+        "text": "We recreate the shape and color of teeth so that the result looks natural. Suitable for those who appreciate details and aesthetics."
+      },
+      "card5": {
+        "title": "Canal treatment and re-treatment",
+        "text": "We work even with complex and neglected cases. We use a microscope to save a tooth where others suggest extraction."
+      },
+      "card6": {
+        "title": "Prevention and treatment of baby tooth cavities",
+        "text": "We work gently with children: treat cavities and lay the foundation for the health of permanent teeth — without fear and with trust."
+      }
     }
   },
   "about": {
@@ -119,7 +145,14 @@
       "title": "🗺️ How to find us?",
       "subtitle": "6 dental clinics throughout Bishkek",
       "clinics": "Our clinics",
-      "call": "Call"
+      "call": "Call",
+      "clinic1": { "name": "Dental Clinic - Main" },
+      "clinic2": { "name": "Dental Clinic - TSUM" },
+      "clinic3": { "name": "Dental Clinic - South" },
+      "clinic4": { "name": "Dental Clinic - West" },
+      "clinic5": { "name": "Dental Clinic - East" },
+      "clinic6": { "name": "Dental Clinic - Besh-Kyungey" },
+      "open24": "Open 24/7"
     },
     "reviews": {
       "title": "Reviews about {{name}}",
@@ -178,6 +211,7 @@
   },
   "client": {
     "dashboard": {
+      "title": "Dashboard",
       "welcome": "Welcome",
       "inWishlist": "In wishlist",
       "inCart": "In cart",
@@ -362,6 +396,23 @@
     "phone": "Phone",
     "email": "Email"
   },
+  "Гигиена": "Hygiene",
+  "Инструменты": "Tools",
+  "Аксессуары": "Accessories",
+  "Средства по уходу": "Care products",
+  "Оборудование": "Equipment",
+  "Другое": "Other",
+  "Лечение": "Treatment",
+  "Хирургия": "Surgery",
+  "Протезирование": "Prosthetics",
+  "Ортодонтия": "Orthodontics",
+  "Детская стоматология": "Pediatric dentistry",
+  "Имплантация": "Implantation",
+  "Консультация": "Consultation",
+  "Отбеливание": "Whitening",
+  "Терапия": "Therapy",
+  "Рентген": "X-ray",
+  "Профилактика": "Prevention",
   "youknow": {
     "title": "INTERESTING FACTS",
     "subtitle": "About the amazing biology of teeth",

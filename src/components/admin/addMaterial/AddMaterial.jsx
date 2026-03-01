@@ -101,7 +101,7 @@ const AddMaterial = () => {
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
-                {cat}
+                {t(cat)}
               </option>
             ))}
           </select>

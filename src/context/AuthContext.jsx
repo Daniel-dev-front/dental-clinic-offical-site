@@ -1,104 +1,81 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { auth } from "../firebase";
-// import { useAuth } from "./AuthContext";
+// import { createContext, useContext, useReducer, useEffect } from "react";
+// import {
+//   createUserWithEmailAndPassword,
+//   signInWithEmailAndPassword,
+//   signOut,
+//   GoogleAuthProvider,
+//   signInWithPopup,
+//   onAuthStateChanged,
+// } from "firebase/auth";
+// import { auth } from "../firebase";
 
-const googleProvider = new GoogleAuthProvider();
+// const AuthContext = createContext(null);
+// export const useAuth = () => useContext(AuthContext);
 
-const authContext = createContext();
-export const useAuth = () => useContext(authContext);
+// const googleProvider = new GoogleAuthProvider();
 
-const initialState = {
-  user: null,
-  loading: true,
-};
+// const ADMIN_EMAIL = "dujsenbekovdaniel8@gmail.com";
 
-const authReducer = (state, action) => {
-  switch (action.type) {
-    case "SET_USER":
-      return {
-        ...state,
-        user: action.payload.user,
-        isAdmin: action.payload.isAdmin,
-        loading: false,
-      };
-    case "LOGOUT":
-      return { ...state, user: null, loading: false };
-    default:
-      return state;
-  }
-};
+// const initialState = {
+//   user: null,
+//   loading: true,
+// };
 
-const AuthContext = ({ children }) => {
-  const [state, dispatch] = useReducer(authReducer, initialState);
+// function authReducer(state, action) {
+//   switch (action.type) {
+//     case "SET_USER":
+//       return { user: action.payload, loading: false };
+//     case "LOGOUT":
+//       return { user: null, loading: false };
+//     default:
+//       return state;
+//   }
+// }
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        dispatch({ type: "SET_USER", payload: { user } });
-      } else {
-        dispatch({ type: "LOGOUT" });
-      }
-    });
+// export const AuthProvider = ({ children }) => {
+//   const [state, dispatch] = useReducer(authReducer, initialState);
 
-    return () => unsubscribe();
-  }, []);
-  const register = async (email, password) => {
-    try {
-      const res = await createUserWithEmailAndPassword(auth, email, password);
-      dispatch({
-        type: "SET_USER",
-        payload: { user: res.user },
-      });
-    } catch (err) {
-      console.error("Ошибка регистрации:", err.message);
-    }
-  };
+//   useEffect(() => {
+//     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+//       if (!firebaseUser) {
+//         dispatch({ type: "LOGOUT" });
+//         return;
+//       }
 
-  const login = async (email, password) => {
-    try {
-      const res = await signInWithEmailAndPassword(auth, email, password);
-      dispatch({ type: "SET_USER", payload: { user: res.user } });
-    } catch (err) {
-      console.error("Ошибка входа:", err.message);
-    }
-  };
+//       const normalizedUser = {
+//         uid: firebaseUser.uid,
+//         email: firebaseUser.email,
+//         displayName: firebaseUser.displayName,
+//         role: firebaseUser.email === ADMIN_EMAIL ? "admin" : "client",
+//       };
 
-  const loginWithGoogle = async () => {
-    try {
-      const res = await signInWithPopup(auth, googleProvider);
-      dispatch({ type: "SET_USER", payload: { user: res.user } });
-    } catch (err) {
-      console.error("Ошибка Google входа:", err.message);
-    }
-  };
+//       dispatch({ type: "SET_USER", payload: normalizedUser });
+//     });
 
-  // --- Logout ---
-  const logout = async () => {
-    await signOut(auth);
-    dispatch({ type: "LOGOUT" });
-  };
+//     return () => unsub();
+//   }, []);
 
-  return (
-    <authContext.Provider
-      value={{
-        ...state,
-        register,
-        login,
-        logout,
-        loginWithGoogle,
-      }}
-    >
-      {children}
-    </authContext.Provider>
-  );
-};
+//   const register = (email, password) =>
+//     createUserWithEmailAndPassword(auth, email, password);
 
-export default AuthContext;
+//   const login = (email, password) =>
+//     signInWithEmailAndPassword(auth, email, password);
+
+//   const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
+
+//   const logout = () => signOut(auth);
+
+//   return (
+//     <AuthContext.Provider
+//       value={{
+//         ...state,
+//         register,
+//         login,
+//         loginWithGoogle,
+//         logout,
+//       }}
+//     >
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };

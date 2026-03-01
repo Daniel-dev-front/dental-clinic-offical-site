@@ -223,29 +223,31 @@
 }
 
 .mobileNav {
-  display: none;
+  display: flex;
   position: absolute;
   top: 80px;
-  left: 0;
-  right: 0;
+  right: 190px;
   background: var(--header-gradient);
   flex-direction: column;
-  padding: 20px;
   gap: 15px;
-  border-radius: 0 0 24px 24px;
+  border-radius: 24px 0 24px 24px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-100%);
-  opacity: 0;
-  visibility: hidden;
   transition: all 0.3s ease;
   z-index: 999;
-
+  width: 50%;
+  height: 240px;
+  .mobile_content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+  }
   &.open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-
   .nav,
   .activeNav {
     width: 100%;
@@ -258,10 +260,6 @@
     }
   }
 }
-
-/* ===== Адаптивность ===== */
-
-/* Ноутбук и меньше (до 1200px) */
 @media (max-width: 1200px) {
   .header {
     .logo {
@@ -420,17 +418,17 @@
   }
 
   .mobileNav {
-    top: 60px;
-
+    top: 285px;
+    right: 0;
     .nav,
     .activeNav {
+      display: flex;
       font-size: 16px;
       padding: 10px 0;
     }
   }
 }
 
-/* Очень маленькие телефоны (до 360px) */
 @media (max-width: 360px) {
   .header {
     .logo {

@@ -79,7 +79,7 @@ const AuthProvider = ({ children }) => {
     await updateProfile(res.user, {
       displayName: name,
     });
-    await res.user.reload(); // 👈 принудительно получаем актуальные данные
+    await res.user.reload();
     dispatch({
       type: "SET_USER",
       payload: {

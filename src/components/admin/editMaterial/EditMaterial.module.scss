@@ -1,6 +1,7 @@
 .editMaterial {
   padding: 24px;
-  max-width: 600px;
+  max-width: 800px;
+  height: 1290px;
   margin: 0 auto;
   background: var(--card-bg, #fff);
   border-radius: 24px;
@@ -55,7 +56,15 @@
     font-family: inter;
     resize: vertical;
   }
-
+  .preview {
+    width: 230px;
+    border-radius: 24px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   .actions {
     display: flex;
     gap: 12px;
@@ -69,6 +78,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
+      width: 50%;
 
       &.saveBtn {
         background: var(--primary, #2563eb);
@@ -100,11 +110,6 @@
   padding: 40px;
   color: var(--text-secondary, #666);
 }
-// ... (твой существующий код) ...
-
-/* ===== Адаптивность ===== */
-
-/* Ноутбук и меньше (до 1200px) */
 @media (max-width: 1200px) {
   .editMaterial {
     max-width: 550px;

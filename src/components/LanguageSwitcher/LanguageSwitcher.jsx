@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaLanguage } from "react-icons/fa";
 import scss from "./LanguageSwitcher.module.scss";
 
 const LanguageSwitcher = () => {
@@ -28,6 +27,10 @@ const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Выбрать язык"
       >
+        <span>
+          {currentLanguage.code.toUpperCase()}
+          <p className={`${scss.arrow} ${isOpen ? scss.open : ""}`}>▼</p>
+        </span>
         <span className={scss.langCode}>
           {currentLanguage.code.toUpperCase()}
         </span>
@@ -48,6 +51,7 @@ const LanguageSwitcher = () => {
               </button>
             ))}
           </div>
+
           <div className={scss.overlay} onClick={() => setIsOpen(false)} />
         </>
       )}

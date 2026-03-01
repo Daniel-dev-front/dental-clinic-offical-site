@@ -37,25 +37,6 @@ body {
   gap: 15px;
 }
 
-.themeToggle {
-  background: transparent;
-  border: 1px solid var(--border-color, #e2e8f0);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--admin-text, #1e293b);
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    background: var(--border-color, #e2e8f0);
-    transform: rotate(15deg);
-  }
-}
-
 .burgerBtn {
   display: none;
   background: transparent;
@@ -336,13 +317,19 @@ body {
   .header h2 {
     font-size: 1.5rem;
   }
-  .themeToggle {
-    width: 38px;
-    height: 38px;
-  }
+
   .burgerBtn {
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 38px;
     height: 38px;
+    padding: 2px 0px;
+    span {
+      width: 60%;
+      height: 3px;
+      border-radius: 15px;
+      background-color: var(--burger-btn);
+    }
   }
   .mobileSidebar {
     width: 240px;
