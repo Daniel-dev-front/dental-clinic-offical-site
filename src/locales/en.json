@@ -13,10 +13,10 @@
     "navigation": "Navigation",
     "services": "Services",
     "contacts": "Contacts",
-    "aboutUs": "About Us",
+    "aboutUs": "Modern dentistry with care for your health and comfort. Over 15 years of experience and thousands of satisfied patients.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "allRightsReserved": "All rights reserved",
+    "allRightsReserved": "All rights reserved.",
     "workHours": "Mon-Sun: 09:00 - 21:00",
     "callUs": "Or call us",
     "address": "Bishkek, Frunze St. 4b"
@@ -183,7 +183,14 @@
     "title": "Our Services",
     "search": "Search by name, category or doctor...",
     "notFound": "Services not found",
-    "all": "all"
+    "all": "all",
+    "list": {
+      "therapy": "Dental treatment",
+      "implantation": "Implantation",
+      "orthodontics": "Orthodontics",
+      "surgery": "Surgery",
+      "hygiene": "Hygiene"
+    }
   },
   "store": {
     "title": "Our Store",
@@ -281,7 +288,7 @@
     "dashboard": {
       "title": "Admin panel",
       "welcome": "Welcome",
-      "admin": "Administrator",
+      "admin": "Admin",
       "products": "Products",
       "doctors": "Doctors",
       "services": "Services",
@@ -469,52 +476,21 @@
       }
     }
   },
-  "footer": {
-    "aboutUs": "Modern dentistry with care for your health and comfort. Over 15 years of experience and thousands of satisfied patients.",
-    "navigation": "Navigation",
-    "services": "Services",
-    "contacts": "Contacts",
-    "address": "Bishkek, Frunze St. 4b",
-    "workHours": "Mon-Sun: 09:00 - 21:00",
-    "allRightsReserved": "All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
-  },
-  "services": {
-    "list": {
-      "therapy": "Dental treatment",
-      "implantation": "Implantation",
-      "orthodontics": "Orthodontics",
-      "surgery": "Surgery",
-      "hygiene": "Hygiene"
-    }
-  },"checkout": {
-  "title": "Checkout",
-  "orderSummary": "Your Order",
-  "name": "Name",
-  "phone": "Phone",
-  "address": "Delivery Address",
-  "paymentMethod": "Payment Method",
-  "deliveryMethod": "Delivery Method",
-  "comment": "Order Comment",
-  "cash": "Cash",
-  "card": "Card",
-  "pickup": "Pickup",
-  "delivery": "Delivery",
-  "submit": "Place Order",
-  "success": "Order placed successfully! We will contact you.",
-  "error": "Error placing order"
-},
-"cart": {
-  "title": "Cart",
-  "clearAll": "Clear all",
-  "empty": "Cart is empty",
-  "emptyDesc": "Add items to cart to place an order",
-  "goToStore": "Go to store",
-  "total": "Total",
-  "checkout": "Checkout",
-  "remove": "Remove",
-  "quantity": "Quantity",
-  "clearConfirm": "Clear entire cart?"
-}
+  "checkout": {
+    "title": "Checkout",
+    "orderSummary": "Your Order",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Delivery Address",
+    "paymentMethod": "Payment Method",
+    "deliveryMethod": "Delivery Method",
+    "comment": "Order Comment",
+    "cash": "Cash",
+    "card": "Card",
+    "pickup": "Pickup",
+    "delivery": "Delivery",
+    "submit": "Place Order",
+    "success": "Order placed successfully! We will contact you.",
+    "error": "Error placing order"
+  }
 }

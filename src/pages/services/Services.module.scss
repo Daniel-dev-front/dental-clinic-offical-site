@@ -74,9 +74,6 @@
       transition: all 0.2s;
       background: var(--card-bg, #f0f4f8);
       color: var(--text-primary, #2d3e50);
-      &:first-child {
-        display: none;
-      }
 
       &:hover {
         transform: translateY(-2px);

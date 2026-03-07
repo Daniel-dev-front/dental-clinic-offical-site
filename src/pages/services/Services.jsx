@@ -9,7 +9,8 @@ const Services = () => {
   const { t } = useTranslation();
   const { service, readServices } = useProduct();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const allLabel = t("services.all");
+  const [selectedCategory, setSelectedCategory] = useState(allLabel);
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: "",
@@ -17,7 +18,7 @@ const Services = () => {
   });
 
   const categories = [
-    "all",
+    allLabel,
     ...new Set(service.map((s) => s.category).filter(Boolean)),
   ];
 
@@ -46,7 +47,9 @@ const Services = () => {
       service.doctorName?.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesCategory =
-      selectedCategory === "all" ? true : service.category === selectedCategory;
+      selectedCategory === allLabel
+        ? true
+        : service.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -73,18 +76,11 @@ const Services = () => {
               <button
                 key={idx}
                 className={`${scss.categoryBtn} ${
-                  selectedCategory === category ||
-                  (selectedCategory === "all" && category === t("services.all"))
-                    ? scss.active
-                    : ""
+                  selectedCategory === category ? scss.active : ""
                 }`}
-                onClick={() =>
-                  setSelectedCategory(
-                    category === t("services.all") ? "all" : category,
-                  )
-                }
+                onClick={() => setSelectedCategory(category)}
                 style={
-                  category !== t("services.all") && category !== "all"
+                  category !== allLabel
                     ? { backgroundColor: getCategoryColor(category) + "20" }
                     : {}
                 }
