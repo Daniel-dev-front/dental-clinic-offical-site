@@ -1,5 +1,5 @@
 import React from "react";
-import Us from "../../components/us/Us";
+import Us from "../../components/us/US";
 import Principles from "../../components/principles/Principles";
 import OurDoctors from "../../components/ourDoctors/OurDoctors";
 import Interior from "../../components/Interior/Interior";
@@ -13,7 +13,7 @@ const About = () => {
   return (
     <div>
       <ReviewProvider>
-        <Us />
+        <Us/>
         <Principles />
         <OurDoctors />
         <Interior />

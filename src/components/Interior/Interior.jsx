@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import scss from "./Interior.module.scss";
-import resepshn from "../../../assets/resepshn.png";
-import wait_zone from "../../../assets/wait-zone.webp";
-import cabinet from "../../../assets/cabinet.webp";
-import operasia from "../../../assets/operasia.jpg";
+import resepshn from "../../assets/resepshn.png";
+import wait_zone from "../../assets/wait-zone.webp";
+import cabinet from "../../assets/cabinet.webp";
+import operasia from "../../assets/operasia.jpg";
 
 const Interior = () => {
   const { t } = useTranslation();
