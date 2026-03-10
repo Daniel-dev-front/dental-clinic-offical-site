@@ -8,7 +8,6 @@ import Review from "../../components/review/Review";
 import { ReviewProvider } from "../../context/ReviewContext";
 import Documents from "../../components/document/Documents";
 import ClinicsMap from "../../components/address/ClinicsMap";
-// import scss from "./Aboute.module.scss"
 const About = () => {
   return (
     <div>
@@ -18,7 +17,7 @@ const About = () => {
         <OurDoctors />
         <Interior />
         <Documents />
-        <ClinicsMap />
+        {/* <ClinicsMap /> */}
         <Review />
         <Cta />
       </ReviewProvider>
