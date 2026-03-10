@@ -1,13 +1,13 @@
 import React from "react";
-import Us from "./us/Us";
-import Principles from "./principles/Principles";
-import OurDoctors from "./ourDoctors/OurDoctors";
-import Interior from "./Interior/Interior";
-import Cta from "./cta/Cta";
-import Review from "./review/Review";
+import Us from "../../components/us/Us";
+import Principles from "../../components/principles/Principles";
+import OurDoctors from "../../components/ourDoctors/OurDoctors";
+import Interior from "../../components/Interior/Interior";
+import Cta from "../../components/cta/Cta";
+import Review from "../../components/review/Review";
 import { ReviewProvider } from "../../context/ReviewContext";
-import Documents from "./document/Documents";
-import ClinicsMap from "./address/ClinicsMap";
+import Documents from "../../components/document/Documents";
+import ClinicsMap from "../../components/address/ClinicsMap";
 // import scss from "./Aboute.module.scss"
 const About = () => {
   return (

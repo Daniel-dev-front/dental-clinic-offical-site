@@ -11,7 +11,7 @@ import scss from "./Documents.module.scss";
 import licenses1 from "../../../assets/lisence1.jpg";
 import registerUdost from "../../../assets/Registratsionnoe-udostoverenie.jpg";
 import registerFromtechno from "../../../assets/register.jpg";
-import { useProduct } from "../../../context/MainContext";
+import { useProduct } from "../../context/MainContext";
 
 const Documents = () => {
   const { t } = useTranslation();
