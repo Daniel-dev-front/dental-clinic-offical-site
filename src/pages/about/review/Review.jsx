@@ -12,8 +12,8 @@ const Reviews = ({ clinicName }) => {
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({ rating: 5, text: "" });
 
-  // const clinicReviews = reviews.filter((r) => r.clinicName === clinicName);
-  // const averageRating = getAverageRating(clinicName);
+  const clinicReviews = reviews.filter((r) => r.clinicName === clinicName);
+  const averageRating = getAverageRating(clinicName);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const Reviews = ({ clinicName }) => {
             <div className={scss.header}>
               <h2>{t("about.reviews.alreadyVisited")}</h2>
               <p>{t("about.reviews.share")}</p>
-              {/* {clinicReviews.length > 0 && (
+              {clinicReviews.length > 0 && (
                 <div className={scss.ratingSummary}>
                   <div className={scss.stars}>
                     {[...Array(5)].map((_, i) => (
@@ -60,7 +60,7 @@ const Reviews = ({ clinicName }) => {
                     ({clinicReviews.length} {t("common.reviews")})
                   </span>
                 </div>
-              )} */}
+              )}
             </div>
 
             {user && !showForm && (
@@ -112,7 +112,7 @@ const Reviews = ({ clinicName }) => {
             )}
           </div>
         )}
-        {/* <div className={scss.reviewsList}>
+        <div className={scss.reviewsList}>
           {clinicReviews.length === 0 ? (
             <p className={scss.noReviews}>{t("about.reviews.noReviews")}</p>
           ) : (
@@ -148,7 +148,7 @@ const Reviews = ({ clinicName }) => {
               </div>
             ))
           )}
-        </div> */}
+        </div>
       </div>
     </section>
   );
