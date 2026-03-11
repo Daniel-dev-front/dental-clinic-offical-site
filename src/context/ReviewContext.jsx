@@ -73,9 +73,9 @@ export const ReviewProvider = ({ children }) => {
     }
   };
 
-  const getReviewsByClinic = (clinicName) => {
-    return reviews.filter((r) => r.clinicName === clinicName);
-  };
+  // const getReviewsByClinic = (clinicName) => {
+  //   return reviews.filter((r) => r.clinicName === clinicName);
+  // };
 
   const getAverageRating = (clinicName) => {
     const clinicReviews = reviews.filter((r) => r.clinicName === clinicName);
@@ -91,7 +91,7 @@ export const ReviewProvider = ({ children }) => {
         loading,
         addReview,
         deleteReview,
-        getReviewsByClinic,
+        // getReviewsByClinic,
         getAverageRating,
       }}
     >
