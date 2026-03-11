@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaStar, FaUserCircle, FaTrash } from "react-icons/fa";
 import scss from "./Review.module.scss";
-import { useReviews } from "../../context/ReviewContext";
-import { useAuth } from "../../context/AuthProvider";
+import { useReviews } from "../../../context/ReviewContext";
+import { useAuth } from "../../../context/AuthProvider";
 
 const Reviews = ({ clinicName }) => {
   const { t } = useTranslation();

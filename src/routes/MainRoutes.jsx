@@ -1,34 +1,41 @@
-import { Route, useRoutes } from "react-router-dom";
-import Home from "../pages/home/Home";
-import About from "../pages/about/About";
-import Store from "../pages/store/Store";
-import Login from "../pages/auth/login/Login";
-import SignUp from "../pages/auth/signUp/SignUp";
-import Admin from "../components/admin/panel/Admin";
+import { useRoutes } from "react-router-dom";
+import { lazy } from "react";
 import ProtectedRoute from "./ProtectedRoute";
-import AddMaterial from "../components/admin/addMaterial/AddMaterial";
-import AllServices from "../components/admin/allServices/AllServices";
-import DashBoard from "../components/admin/dashboard/DashBoard";
-import EditMaterial from "../components/admin/editMaterial/EditMaterial";
-import AllMaterials from "../components/admin/allMaterials/AllMaterials";
-import AddServices from "../components/admin/addServices/AddServices";
-import ProductDetail from "../components/admin/productDetail/ProductDetail";
-import ClientLayout from "../components/client/clientLayout/ClientLayout";
-import ClientDashboard from "../components/client/ClientDashboard/ClientDashboard";
-import Wishlist from "../components/client/Wishlist/Wishlist.jsx";
-import Cart from "../components/client/cart/Cart";
-import Appointments from "../components/client/appointments/Appointments";
-import ProfileSettings from "../components/client/profileSettings/ProfileSettings";
-import AllAppointments from "../components/admin/allAppointments/AllAppointments";
-import Doctors from "../components/admin/doctors/Doctors";
-import AddDoctor from "../components/admin/addDoctor/AddDoctor";
-import EditDoctor from "../components/admin/editDoctor/EditDoctor";
-import EditService from "../components/admin/editService/EditService";
-import Services from "../pages/services/Services";
-import Checkout from "../components/client/checkout/Checkout";
+
+const Home = lazy(() => import("../pages/home/Home"));
+const About = lazy(() => import("../pages/about/About"));
+const Store = lazy(() => import("../pages/store/Store"));
+const Services = lazy(() => import("../pages/services/Services"));
+const Login = lazy(() => import("../pages/auth/login/Login"));
+const SignUp = lazy(() => import("../pages/auth/signUp/SignUp"));
+
+// Админские компоненты
+const Admin = lazy(() => import("../components/admin/panel/Admin"));
+const AddMaterial = lazy(() => import("../components/admin/addMaterial/AddMaterial"));
+const AllServices = lazy(() => import("../components/admin/allServices/AllServices"));
+const DashBoard = lazy(() => import("../components/admin/dashboard/DashBoard"));
+const EditMaterial = lazy(() => import("../components/admin/editMaterial/EditMaterial"));
+const AllMaterials = lazy(() => import("../components/admin/allMaterials/AllMaterials"));
+const AddServices = lazy(() => import("../components/admin/addServices/AddServices"));
+const ProductDetail = lazy(() => import("../components/admin/productDetail/ProductDetail"));
+const AllAppointments = lazy(() => import("../components/admin/allAppointments/AllAppointments"));
+const Doctors = lazy(() => import("../components/admin/doctors/Doctors"));
+const AddDoctor = lazy(() => import("../components/admin/addDoctor/AddDoctor"));
+const EditDoctor = lazy(() => import("../components/admin/editDoctor/EditDoctor"));
+const EditService = lazy(() => import("../components/admin/editService/EditService"));
+
+// Клиентские компоненты
+const ClientLayout = lazy(() => import("../components/client/clientLayout/ClientLayout"));
+const ClientDashboard = lazy(() => import("../components/client/ClientDashboard/ClientDashboard"));
+const Wishlist = lazy(() => import("../components/client/Wishlist/Wishlist"));
+const Cart = lazy(() => import("../components/client/cart/Cart"));
+const Appointments = lazy(() => import("../components/client/appointments/Appointments"));
+const ProfileSettings = lazy(() => import("../components/client/profileSettings/ProfileSettings"));
+const Checkout = lazy(() => import("../components/client/checkout/Checkout"));
 
 const MainRoutes = () => {
   const routes = [
+    // Публичные маршруты
     { path: "/", element: <Home /> },
     { path: "/about", element: <About /> },
     { path: "/store", element: <Store /> },
@@ -36,6 +43,7 @@ const MainRoutes = () => {
     { path: "/login", element: <Login /> },
     { path: "/register", element: <SignUp /> },
 
+    // Админка
     {
       path: "/admin",
       element: (
@@ -49,7 +57,6 @@ const MainRoutes = () => {
         { path: "addServices", element: <AddServices /> },
         { path: "editMaterial", element: <EditMaterial /> },
         { path: "allServices", element: <AllServices /> },
-        { path: "dashboard", element: <DashBoard /> }, //
         { path: "allMaterials", element: <AllMaterials /> },
         { path: "editMaterial/:id", element: <EditMaterial /> },
         { path: "productDetail/:id", element: <ProductDetail /> },
@@ -60,6 +67,8 @@ const MainRoutes = () => {
         { path: "editService/:id", element: <EditService /> },
       ],
     },
+
+    // Личный кабинет
     {
       path: "/profile",
       element: (

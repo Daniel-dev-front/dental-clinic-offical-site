@@ -10,8 +10,8 @@ import {
   DialogTitle,
   Snackbar,
 } from "@mui/material";
-import { useProduct } from "../../context/MainContext";
-import { useAuth } from "../../context/AuthProvider";
+import { useProduct } from "../../../context/MainContext";
+import { useAuth } from "../../../context/AuthProvider";
 
 const Cta = () => {
   const { t } = useTranslation();

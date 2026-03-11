@@ -1,13 +1,13 @@
 import React from "react";
-import Us from "../../components/us/US";
-import Principles from "../../components/principles/Principles";
-import OurDoctors from "../../components/ourDoctors/OurDoctors";
-import Interior from "../../components/Interior/Interior";
-import Cta from "../../components/cta/Cta";
-import Review from "../../components/review/Review";
+import Us from "./us/Us.jsx";
+import Principles from "./principles/Principles.jsx";
+import OurDoctors from "./ourDoctors/OurDoctors.jsx";
+import Interior from "./Interior/Interior.jsx";
+import Cta from "./cta/Cta.jsx";
+import Review from "./review/Review.jsx";
 import { ReviewProvider } from "../../context/ReviewContext";
-import Documents from "../../components/document/Documents";
-import ClinicsMap from "../../components/address/ClinicsMap";
+import Documents from "./document/Documents.jsx";
+import ClinicsMap from "./address/ClinicsMap.jsx";
 const About = () => {
   return (
     <div>
@@ -17,7 +17,7 @@ const About = () => {
         <OurDoctors />
         <Interior />
         <Documents />
-        {/* <ClinicsMap /> */}
+        <ClinicsMap />
         <Review />
         <Cta />
       </ReviewProvider>

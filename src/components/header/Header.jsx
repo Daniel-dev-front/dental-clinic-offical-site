@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import scss from "./Header.module.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "../../components/LanguageSwitcher/LanguageSwitcher";
 import { TbUserSquareRounded } from "react-icons/tb";
 import { FiLogIn } from "react-icons/fi"; // <-- импортируем иконку входа
-import SignUp from "../../pages/auth/signUp/SignUp";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext";
 import { FaUserCircle } from "react-icons/fa";
 import { useAuth } from "../../context/AuthProvider";
+const SignUp = lazy(() => import("../../pages/auth/signUp/SignUp"));
 
 const Header = () => {
   const { t } = useTranslation();

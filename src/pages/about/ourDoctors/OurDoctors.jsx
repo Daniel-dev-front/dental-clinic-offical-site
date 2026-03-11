@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useProduct } from "../../context/MainContext";
+import { useProduct } from "../../../context/MainContext";
 import scss from "./OurDoctors.module.scss";
 
 const OurDoctors = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import { useTranslation } from "react-i18next";
 import scss from "./SignUp.module.scss";
 import { useAuth } from "../../../context/AuthProvider";
@@ -10,7 +10,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import Login from "../login/Login";
+const Login = lazy(() => import("../login/Login"))
 
 const SignUp = ({ isOpen, setIsOpen }) => {
   const { t } = useTranslation();
