@@ -5,23 +5,23 @@ import OurDoctors from "./ourDoctors/OurDoctors.jsx";
 import Interior from "./Interior/Interior.jsx";
 import Cta from "./cta/Cta.jsx";
 import Review from "./review/Review.jsx";
-import { ReviewProvider } from "../../context/ReviewContext";
 import Documents from "./document/Documents.jsx";
 import ClinicsMap from "./address/ClinicsMap.jsx";
+import { ReviewProvider } from "../../context/ReviewContext.jsx";
 const About = () => {
   return (
     <div>
     
-      <ReviewProvider>
         <Us/>
         <Principles />
         <OurDoctors />
         <Interior />
         <Documents />
         <ClinicsMap />
+      <ReviewProvider>
         <Review />
-        <Cta />
       </ReviewProvider>
+        <Cta />
     </div>
   );
 };
