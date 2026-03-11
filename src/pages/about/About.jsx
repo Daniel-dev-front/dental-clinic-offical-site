@@ -11,6 +11,7 @@ import ClinicsMap from "./address/ClinicsMap.jsx";
 const About = () => {
   return (
     <div>
+    
       <ReviewProvider>
         <Us/>
         <Principles />
