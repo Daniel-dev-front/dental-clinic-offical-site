@@ -12,8 +12,8 @@ const Reviews = ({ clinicName }) => {
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({ rating: 5, text: "" });
 
-  const clinicReviews = reviews.filter((r) => r.clinicName === clinicName);
-  const averageRating = getAverageRating(clinicName);
+  const clinicReviews = reviews?.filter((r) => r.clinicName === clinicName) || [];
+  const averageRating = getAverageRating(clinicName) || 0;
 
   const handleSubmit = (e) => {
     e.preventDefault();

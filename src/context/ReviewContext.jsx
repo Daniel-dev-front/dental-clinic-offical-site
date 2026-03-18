@@ -45,7 +45,7 @@ export const ReviewProvider = ({ children }) => {
   // }, []);
   useEffect(() => {
     const storedReviews = localStorage.getItem("clinic_reviews");
-    setReviews(JSON.parse(storedReviews));
+    setReviews( storedReviews ?  JSON.parse(storedReviews) : []);
     setLoading(false);
   }, []);
 
@@ -81,7 +81,7 @@ export const ReviewProvider = ({ children }) => {
     const clinicReviews = reviews.filter((r) => r.clinicName === clinicName);
     if (clinicReviews.length === 0) return 0;
     const sum = clinicReviews.reduce((acc, r) => acc + r.rating, 0);
-    return (sum / clinicReviews.length).toFixed(1);
+    return Number((sum / clinicReviews.length).toFixed(1));
   };
 
   return (
